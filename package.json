@@ -15,7 +15,9 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "ajv": "^8.0.0",
+    "ajv-keywords": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

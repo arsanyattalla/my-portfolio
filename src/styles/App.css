@@ -1,3 +1,4 @@
+/* General styles */
 .App {
   text-align: center;
 }
@@ -21,7 +22,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-
 }
 
 .App-link {
@@ -37,7 +37,6 @@
   }
 }
 
-
 .earth-container {
   display: flex;
   justify-content: center;
@@ -49,10 +48,6 @@
   width: 100px;
   height: 100px;
   animation: spin 10s linear infinite;
- 
-
-
-
 }
 
 @keyframes spin {
@@ -64,7 +59,6 @@
   }
 }
 
-
 .title {
   display: flex;
   align-items: center;
@@ -72,17 +66,14 @@
   flex-direction: column;
   background-size: cover;
   background-position: top;
-  
 }
-
 
 .title-text {
   font-family: 'Arial Black', sans-serif;
   color: black;
   font-size: 35px;
   font-family: 'Courier New', Courier, monospace;
-  font-weight:bold;
-
+  font-weight: bold;
 }
 
 @keyframes gradientAnimation {
@@ -96,16 +87,31 @@
     background-position: 0% 50%;
   }
 }
-/* App.css */
-
-.App {
-  text-align: center;
-}
 
 .background-image {
   background-image: url('../images/pic03.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh; 
+  min-height: 100vh;
+}
 
+/* Responsive styles */
+@media (max-width: 767px) {
+  .App-header {
+    padding: 10px;
+  }
+
+  .rotating-earth {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title-text {
+    font-size: 1.5rem;
+  }
+  
+  .title {
+    padding: 0 20px;
+    text-align: center;
+  }
 }

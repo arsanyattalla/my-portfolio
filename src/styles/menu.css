@@ -1,61 +1,4 @@
-
-.p-2 {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    color: white;
-    background-color: #5b6d94;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 5px;
-  }
-
-  .js-text {
-    text-align: left;
-    margin-right: 600px;
-    margin-left: 25px;
-    border: 2px solid #333; 
-    padding: 20px;         
-    border-radius: 10px;    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    
-  }
-
-
-  .js-texts {
-    display: block;
-    margin-bottom: 20px;
-    
-  }
-
-
-  
-  .p-2:hover {
-    background-color: #0842ad;
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  .p-2:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .p-2:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(16, 17, 16, 0.5);
-  }
-  
-
-
-
-
-  
-.p-3 {
+.p-2, .p-3 {
   padding: 10px 20px;
   border: none;
   border-radius: 12px;
@@ -68,30 +11,59 @@
   letter-spacing: 1.5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 0 5px;
-  margin-right: -1150px;
-  margin-top: 10px;
-  
-
 }
 
-.header{
-  font-size: 30px;
-  font-weight: 700;
-  margin-left: 30px;
-}
-
-.p-3:hover {
+.p-2:hover, .p-3:hover {
   background-color: #0842ad;
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.p-3:active {
+.p-2:active, .p-3:active {
   transform: scale(0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.p-3:focus {
+.p-2:focus, .p-3:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(16, 17, 16, 0.5);
+}
+
+.js-text {
+  text-align: left;
+  margin: 20px auto;
+  border: 2px solid #333; 
+  padding: 20px;         
+  border-radius: 10px;    
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  max-width: 800px;
+}
+
+.js-texts {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.header {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 30px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .header {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .js-text {
+    margin: 10px;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .p-3 {
+    margin: 10px;
+  }
 }

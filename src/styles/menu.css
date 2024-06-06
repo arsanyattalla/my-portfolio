@@ -48,13 +48,32 @@
   font-size: 30px;
   font-weight: 700;
   margin: 30px 0;
+  margin-left: 220px;
 }
 
-/* Responsive styles */
+.profile-pic-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 210px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure the space between elements */
+  flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+}
+
 @media (max-width: 767px) {
   .header {
     font-size: 24px;
     margin: 20px 0;
+    text-align: center;
+    margin-left: 0;
   }
 
   .js-text {
@@ -66,5 +85,15 @@
   .p-2, .p-3 {
     margin: 10px 0;
     width: 100%;
+  }
+
+  .profile-pic-container {
+    justify-content: center; /* Center align for mobile devices */
+    margin-right: 0;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

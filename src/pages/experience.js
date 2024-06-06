@@ -16,7 +16,7 @@ function Experience() {
             </div>
             <div className='about-container'>
               <p className='header'>
-                About Me
+                Experience
               </p>
               <div className="profile-pic-container">
                 <img className="profile-pic" src={profimeImg} alt="Profile" />

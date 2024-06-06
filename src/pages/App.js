@@ -14,6 +14,9 @@ function App() {
           <img className="rotating-earth" src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif" alt="Rotating Earth" />
           
             <h1 className="title-text">Welcome to Arsany's Portfolio</h1>
+            <div classname='texts'>
+            <p  >Software Engineer</p>
+            </div>
           </div>
           <div>
             <Menu/>

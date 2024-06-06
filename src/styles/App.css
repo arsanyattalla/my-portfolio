@@ -74,6 +74,7 @@
   font-size: 35px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  margin-bottom: -20px;
 }
 
 @keyframes gradientAnimation {
@@ -94,6 +95,9 @@
   background-position: center;
   min-height: 100vh;
 }
+
+
+
 
 /* Responsive styles */
 @media (max-width: 767px) {

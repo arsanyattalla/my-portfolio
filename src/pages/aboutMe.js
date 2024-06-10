@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
 import '../styles/menu.css';
 import profimeImg from '../images/profile.jpg';
 
 function AboutMe() {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+      setAnimate(true);
+  }, []);
+
+
+
+
   return (
     <div>
       <header>
         <div className='title'>
           <button className='p-3' onClick={() => window.location.href = '/'}>Home</button>
         </div>
-        <div className='about-container'>
-          <p className='header'>
+        <div className={`about-container' ${animate ? 'animate-slideIn' : ''}`}>
+          <p className='header' >
             About Me
           </p>
           <div className="profile-pic-container">
             <img className="profile-pic" src={profimeImg} alt="Profile" />
           </div>
         </div>
-        <div className='js-text'>
+        <div className={`js-text ${animate ? 'animate-slideIn' : ''}`}>
           <p>
             <span className='js-texts'>Hello! I am Arsany Attalla, a passionate computer science graduate with a love for technology, soccer, and exploring the world. Originally hailing from the vibrant city of Cairo, Egypt, I've always been fascinated by how technology can bridge gaps and bring people together. My journey in computer science started at a young age and has grown into a rewarding career where I continuously seek to learn and innovate.
             </span>

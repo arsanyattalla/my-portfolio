@@ -14,19 +14,19 @@ const customStyles = {
 };
 
 export function Menu() {
-  const navigateTo = (path) => {
-    fetch(`/api${path}`)
-      .then(response => {
-        if (response.redirected) {
-          window.location.href = response.url;
-        }
-      })
-      .catch(error => console.error('Error:', error));
-  };
+  // const navigateTo = (path) => {
+  //   fetch(`/api${path}`)
+  //     .then(response => {
+  //       if (response.redirected) {
+  //         window.location.href = response.url;
+  //       }
+  //     })
+  //     .catch(error => console.error('Error:', error));
+  // };
   return (
     <Stack direction="horizontal" gap={3}>
-      <button className="p-2" onClick={() => navigateTo('/aboutme')} >About me</button>
-      <button className="p-2" onClick={() => navigateTo('/experience')}>Experience</button>
+      <button className="p-2" onClick={() => window.location.href= '/aboutme'} >About me</button>
+      <button className="p-2" onClick={() => window.location.href= '/experience'}>Experience</button>
       <button className="p-2">Projects</button>
     </Stack>
   );

@@ -11,7 +11,7 @@ function Experience() {
   }, []);
 
   return (
-    <div>
+    <div className="background">
       <header>
         <div className="title">
           <button className="p-3" onClick={() => (window.location.href = "/")}>
@@ -31,7 +31,7 @@ function Experience() {
               <br />
               Qureez, Inc. [10/2021] – [5/2024]
               <br />
-                Full-time
+              Full-time
             </span>
             <ul>
               <li>
@@ -69,8 +69,8 @@ function Experience() {
               <br />
               Ratica, [05/2021] – [08/2021]
               <br />
-                  Internship  
-                </span>
+              Internship
+            </span>
             <ul>
               <li>
                 Developed and launched a new user interface for the company’s

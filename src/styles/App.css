@@ -93,6 +93,13 @@
   background-image: url("../images/pic03.jpg");
   background-size: cover;
   background-position: center;
+  min-height: auto;
+}
+
+.background {
+  background-image: url("../images/pic03.jpg");
+  background-size: cover;
+  background-position: center;
   min-height: 120vh;
 }
 

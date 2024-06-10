@@ -27,39 +27,11 @@ function Experience() {
         <div className={`js-text ${animate ? "animate-slideIn" : ""}`}>
           <p>
             <span className="js-texts">
-              <strong>Software Engineer-Frontend Developer</strong>
-              <br />
-              Ratica, [05/2021] – [08/2021]
-            </span>
-            <ul>
-              <li>
-                Developed and launched a new user interface for the company’s
-                flagship product, resulting in a 20% increase in user
-                engagement.
-              </li>
-              <li>
-                Optimized web applications for speed and scalability, reducing
-                page load times by 35%.
-              </li>
-              <li>
-                Implemented responsive design techniques, enhancing user
-                experience across all devices.
-              </li>
-              <li>
-                Introduced code review practices that improved code quality and
-                reduced bugs by 15%.
-              </li>
-              <li>
-                Led a successful migration to React, improving maintainability
-                and developer productivity.
-              </li>
-            </ul>
-          </p>
-          <p>
-            <span className="js-texts">
               <strong>Software Engineer</strong>
               <br />
               Qureez, Inc. [10/2021] – [5/2024]
+              <br />
+                Full-time
             </span>
             <ul>
               <li>
@@ -88,6 +60,38 @@ function Experience() {
               <li>
                 Designed and executed a comprehensive testing strategy that
                 decreased production bugs by 30%.
+              </li>
+            </ul>
+          </p>
+          <p>
+            <span className="js-texts">
+              <strong>Software Engineer-Frontend Developer Intern</strong>
+              <br />
+              Ratica, [05/2021] – [08/2021]
+              <br />
+                  Internship  
+                </span>
+            <ul>
+              <li>
+                Developed and launched a new user interface for the company’s
+                flagship product, resulting in a 20% increase in user
+                engagement.
+              </li>
+              <li>
+                Optimized web applications for speed and scalability, reducing
+                page load times by 35%.
+              </li>
+              <li>
+                Implemented responsive design techniques, enhancing user
+                experience across all devices.
+              </li>
+              <li>
+                Introduced code review practices that improved code quality and
+                reduced bugs by 15%.
+              </li>
+              <li>
+                Led a successful migration to React, improving maintainability
+                and developer productivity.
               </li>
             </ul>
           </p>

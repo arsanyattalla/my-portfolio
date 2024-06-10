@@ -69,10 +69,10 @@
 }
 
 .title-text {
-  font-family: 'Arial Black', sans-serif;
+  font-family: "Arial Black", sans-serif;
   color: black;
   font-size: 35px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   margin-bottom: -20px;
 }
@@ -90,14 +90,11 @@
 }
 
 .background-image {
-  background-image: url('../images/pic03.jpg');
+  background-image: url("../images/pic03.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 120vh;
 }
-
-
-
 
 /* Responsive styles */
 @media (max-width: 767px) {
@@ -113,39 +110,82 @@
   .title-text {
     font-size: 1.5rem;
   }
-  
+
   .title {
     padding: 0 20px;
     text-align: center;
   }
-  .header{
+  .header {
     text-align: center;
   }
-  
-  
 }
-
-.profile-pic{
-  width: 150px; 
-  height: 150px; 
+.social-container {
+  display: flex;
+  align-items: center; /* Align buttons vertically center */
+}
+.social-button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #5c606b; /* LinkedIn blue color */
   border-radius: 50%;
-  object-fit: cover; 
-  border: 2px solid #333; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  margin-right: 0px; /* Add some space between the buttons */
+  margin-top: 20px;
+}
+.social-button img {
+  width: 24px; /* Adjust the size as needed */
+  height: 24px; /* Adjust the size as needed */
+}
+.social-button:hover {
+  background-color: #0752b3;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
-
+.linkedin-button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #5c606b; /* LinkedIn blue color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.linkedin-button img {
+  width: 24px; /* Adjust the size as needed */
+  height: 24px; /* Adjust the size as needed */
+}
+.linkedin-button:hover {
+  background-color: #021c3f;
+}
 
 @keyframes slideIn {
   from {
-      opacity: 0;
-      transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-100%);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

@@ -5,7 +5,6 @@ const routes = require('./routes');
 
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
-// Use the routes defined in the routes folder
 app.use('/api', routes);
 
 app.get('*', (req, res) => {

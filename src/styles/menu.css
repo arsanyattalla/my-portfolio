@@ -1,4 +1,5 @@
-.p-2, .p-3 {
+.p-2,
+.p-3 {
   padding: 10px 20px;
   border: none;
   border-radius: 12px;
@@ -13,18 +14,21 @@
   margin: 0 5px;
 }
 
-.p-2:hover, .p-3:hover {
+.p-2:hover,
+.p-3:hover {
   background-color: #0842ad;
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.p-2:active, .p-3:active {
+.p-2:active,
+.p-3:active {
   transform: scale(0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.p-2:focus, .p-3:focus {
+.p-2:focus,
+.p-3:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(16, 17, 16, 0.5);
 }
@@ -32,10 +36,10 @@
 .js-text {
   text-align: left;
   margin: 20px auto;
-  border: 2px solid #333; 
-  padding: 20px;         
-  border-radius: 10px;    
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
 }
 
@@ -73,7 +77,6 @@
     font-size: 24px;
     margin: 20px 0;
     text-align: center;
-    
   }
 
   .js-text {
@@ -82,19 +85,19 @@
     font-size: 14px;
   }
 
-  .p-2, .p-3 {
+  .p-2,
+  .p-3 {
     margin: 10px 0;
     width: 100%;
   }
 
   .profile-pic-container {
-    justify-content: center; 
+    justify-content: center;
     margin-right: 0;
   }
 
   .about-container {
     flex-direction: column;
     align-items: center;
-    
   }
 }

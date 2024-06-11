@@ -5,6 +5,7 @@ import "./styles/index.css";
 import App from "./pages/App";
 import AboutMe from "./pages/aboutMe";
 import Experience from "./pages/experience";
+import Projects from "./pages/projects.js"
 import Menu from "./utils/menu";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/App.css";
@@ -18,6 +19,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/aboutme" element={<AboutMe />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="projects" element={<Projects />} />
         </Routes>
       </Router>
     </div>

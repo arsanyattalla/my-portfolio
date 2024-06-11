@@ -45,6 +45,22 @@ function Projects() {
             <button
               onClick={() =>
                 (window.location.href =
+                  "https://github.com/arsanyattalla/file_system_C/tree/main")
+              }
+              className="p-2"
+            >
+              <strong>File System in C</strong>
+            </button>
+            <ul>
+              <li>
+              Developed a C-based file system capable of executing various file operations and commands, such as creating, reading, writing, deleting, and listing files and directories, while ensuring data integrity and efficient storage management.
+              </li>
+            </ul>
+          </p>
+          <p>
+            <button
+              onClick={() =>
+                (window.location.href =
                   "https://github.com/arsanyattalla/my-portfolio/tree/master")
               }
               className="p-2"

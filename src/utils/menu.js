@@ -35,7 +35,7 @@ export function Menu() {
         className="p-2"
         onClick={() => (window.location.href = "/experience")}
       >
-        Experience
+        Experience/Skills
       </button>
       <button 
         className="p-2"

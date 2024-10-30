@@ -33,41 +33,38 @@ function Experience() {
                 <strong className="title">Work Experience</strong>
                 <br></br>
                 <br></br>
-                <strong>Software Engineer</strong>
+                <strong>Software Engineer - Quality Assurance</strong>
                 <br />
-                Qureez, Inc. [10/2021] – [5/2024]
+                Qureez, Inc. [11/2022] – [05/2024]
                 <br />
                 Full-time
               </span>
               <ul>
-                <li>
-                  Accumulated three years of comprehensive software engineering
-                  experience in a fast-paced startup environment.
-                </li>
-                <li>
-                  Spearheaded full stack development in a startup environment,
-                  utilizing TypeScript, AWS, Node.js, and MongoDB to create web
-                  and mobile applications for IoT smart devices, aimed at
-                  reducing energy consumption in various settings such as
-                  offices, apartments, and refrigeration warehouses.
-                </li>
-                <li>
-                  Architected and implemented a microservices-based backend,
-                  reducing system downtime by 40% and enhancing scalability.
-                </li>
-                <li>
-                  Worked extensively with Linux-based systems, optimizing server
-                  performance and reliability.
-                </li>
-                <li>
-                  Played a key role in the adoption of continuous integration
-                  and deployment (CI/CD) practices, cutting release times by
-                  50%.
-                </li>
-                <li>
-                  Designed and executed a comprehensive testing strategy that
-                  decreased production bugs by 30%.
-                </li>
+              <li>Improved defect detection by 30% through the implementation of a structured bug tracking system using Jira.</li>
+              <li>Led a negative testing program, identifying 500+ failure points to enhance system resilience and user experience.</li>
+              <li>Optimized Linux systems, increasing performance by 30%, which reduced testing downtime and enhanced overall test efficiency.</li>
+              <li>Developed and maintained API testing frameworks with Postman, boosting the reliability and accuracy of backend service validation.</li>
+              <li>Integrated Appium automated tests into Jenkins CI/CD pipelines, accelerating regression testing and enabling early defect identification.</li>
+              <li>Managed cloud infrastructure on AWS/GCP, optimizing resources for better performance and integration with QA workflows.</li>
+              <li>Streamlined communication between QA and development teams, reducing critical bug resolution times by 20%.</li>
+              <li>Orchestrated automated test runs in Jenkins, improving test coverage and speeding up the feedback loop between QA and development.</li>
+              <li>Stack: JavaScript (React); Express.js; Node.js; Linux (Ubuntu); MongoDB; AWS</li>
+              </ul>
+            </p>
+            <p>
+              <span className="js-texts">
+                <strong>IT Support Engineer</strong>
+                <br />
+                Qureez, Inc, [10/2021] – [1/2022]
+                <br />
+                Full-Time
+              </span>
+              <ul>
+              <li>Achieved 90% first-call resolution for complex Linux server issues, optimizing system performance.</li>
+              <li>Automated server maintenance tasks, reducing manual workload by 40% and minimizing system downtime.</li>
+              <li>Enhanced server response times by 30% through effective troubleshooting and performance tuning.</li>
+              <li>Provided clear guidance to users, boosting satisfaction scores and reducing repeat inquiries.</li>
+              <li>Trained support team members in Linux and server troubleshooting, building a skilled, self-sufficient team.</li>
               </ul>
             </p>
             <p>
@@ -117,7 +114,6 @@ function Experience() {
                     <li>Python</li>
                     <li>Java</li>
                     <li>JavaScript</li>
-                    <li>C++</li>
                     <li>SQL</li>
                   </ul>
                 </li>

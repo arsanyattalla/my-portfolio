@@ -1,15 +1,22 @@
-import React from "react";
-import "../styles/App.css";
+import React, { useEffect, useState } from "react";
 import Globe from "react-globe.gl";
 import { Menu } from "../utils/menu.js";
 import profileImg from "../images/linkedin1.png";
 import githubImg from "../images/github.jpg";
 import Stack from "react-bootstrap/Stack";
+import "../styles/animation.css";
 
 function App() {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+  
   return (
     <div>
-      <header className="App-header">
+      <div >
+      <header className={`${animate ? "animat" : ""}`}>
         <div className="title">
           <img
             className="rotating-earth"
@@ -46,6 +53,7 @@ function App() {
           </a>
         </div>
       </header>
+      </div>
     </div>
   );
 }

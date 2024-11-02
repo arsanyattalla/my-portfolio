@@ -174,7 +174,7 @@
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-color: #5c606b; /* LinkedIn blue color */
+    background-color: #000000; /* LinkedIn blue color */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -190,7 +190,7 @@
     height: 24px; /* Adjust the size as needed */
   }
   .linkedin-button:hover {
-    background-color: #021c3f;
+    background-color: #ffffff;
   }
   
 

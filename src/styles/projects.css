@@ -1,4 +1,3 @@
-/* Container styling */
 .projects-container {
     display: flex;
     flex-wrap: wrap;
@@ -8,7 +7,6 @@
     
   }
   
-  /* Individual project block styling */
   .project-block {
     background-color: #85959e2f;
     border: 1px solid #000000;
@@ -17,8 +15,8 @@
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s;
-    display: flex; /* Use flexbox to arrange content */
-    flex-direction: column; /* Stack children vertically */
+    display: flex;
+    flex-direction: column; 
     margin-top: 50px;
 
   }
@@ -27,7 +25,6 @@
     transform: translateY(-5px);
   }
   
-  /* Image styling */
   .project-image {
     width: 100%;
     height: 200px;
@@ -40,13 +37,12 @@
     object-fit: cover;
   }
   
-  /* Content styling */
   .project-content {
     padding: 15px;
     text-align: left;
-    flex-grow: 1; /* Allow content to grow and fill available space */
-    display: flex; /* Use flexbox for inner content alignment */
-    flex-direction: column; /* Stack children vertically */
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
   }
   
   .project-title {
@@ -72,19 +68,18 @@
     margin-top: 10px;
   }
   
-  /* Styles for the special DrillShare image */
+  
   .drillshare-image {
     width: 100%;
     height: 75px;
     object-fit: cover; 
-    transform: scale(0.8); /* Scale down the image to 80% */
-    transform-origin: center; /* Ensures scaling happens from the center */
+    transform: scale(0.8); 
+    transform-origin: center; 
     margin-top: 50px;
   }
   .drillshare-special{
     margin-top: 50px;
   }
-  /* General styles */
   .App {
     text-align: center;
   }
@@ -101,10 +96,10 @@
   }
   
   .header {
-    font-family: Arial, Helvetica, sans-serif; /* Uses system fonts */
+    font-family: Arial, Helvetica, sans-serif; 
     font-size: 1.8em;
-    color: #000000; /* Dark color for a clean look */
-    font-weight: bold; /* Makes the text stand out */
+    color: #000000; 
+    font-weight: bold; 
     margin: 25px 0; 
     letter-spacing: 5px; 
   }
@@ -198,7 +193,6 @@
     min-height: 120vh;
   }
   
-  /* Responsive styles */
   @media (max-width: 767px) {
     .App-header {
       padding: 10px;
@@ -219,20 +213,20 @@
     }
   }
   
-  .social-container {
+  .socia {
    
-    justify-content: center; /* Center the button */
+    justify-content: center; 
     align-items: right;
-    margin-top: auto; /* Push the social button to the bottom */
+    margin-top: auto; 
   }
   
   .social-button {
     width: 50px;
     height: 50px;
-    background-color: #9ea7c02c; /* LinkedIn blue color */
+    background-color: #585d6d; 
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the image */
+    justify-content: center; 
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
@@ -240,12 +234,12 @@
   }
   
   .social-button img {
-    width: 24px; /* Adjust the size as needed */
-    height: 24px; /* Adjust the size as needed */
+    width: 24px; 
+    height: 24px; 
   }
   
   .social-button:hover {
-    background-color: #0752b3; /* Change color on hover */
+    background-color: #021c3f;
   }
   
   .profile-pic {
@@ -263,7 +257,7 @@
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-color: #5c606b; /* LinkedIn blue color */
+    background-color: #585d6d;
     border-radius: 50%;
     display: flex;
     align-items: center;

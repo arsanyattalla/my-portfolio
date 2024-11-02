@@ -133,23 +133,20 @@
 
 }
 .social-container {
-  display: flex;
-  align-items: center; /* Align buttons vertically center */
+   
+  justify-content: center; /* Center the button */
+  align-items: right;
+}
+
+
+.buttonss {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically center the items */
+  gap: 1px; /* Optional: add space between the buttons */
 }
 .social-button {
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-color: #5c606b; /* LinkedIn blue color */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-  margin-right: 0px; /* Add some space between the buttons */
-  margin-top: 20px;
+  
 }
 .social-button img {
   width: 24px; /* Adjust the size as needed */
@@ -172,13 +169,13 @@
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #5c606b; /* LinkedIn blue color */
+  background-color: #000000; /* LinkedIn blue color */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(219, 24, 24, 0.1);
   transition: background-color 0.3s ease;
   margin-top: 20px;
   margin-right: 20px;
@@ -188,7 +185,7 @@
   height: 24px; /* Adjust the size as needed */
 }
 .linkedin-button:hover {
-  background-color: #021c3f;
+  background-color: #1770e4;
 }
 
 @keyframes slideIn {

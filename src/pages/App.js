@@ -33,7 +33,7 @@ function App() {
           <Menu />
         </div>
 
-        <div class="social-container">
+        <div className="buttonss" >
           <a
             href="https://www.linkedin.com/in/arsany-attalla-1330531b1/"
             target="_blank"

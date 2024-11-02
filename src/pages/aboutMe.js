@@ -11,7 +11,7 @@ function AboutMe() {
   }, []);
 
   return (
-    <div className="background">
+    <div className="background-image">
       <header>
         <div className="title">
           <button className="p-3" onClick={() => (window.location.href = "/")}>

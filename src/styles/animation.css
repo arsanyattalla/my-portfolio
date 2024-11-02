@@ -70,7 +70,7 @@
   
   .title-text {
     font-family: "Arial Black", sans-serif;
-    color: black;
+    color: rgb(165, 165, 165);
     font-size: 35px;
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
@@ -97,19 +97,8 @@
     }
   }
   
-  .background-image {
-    background-image: url("../images/pic03.jpg");
-    background-size: cover;
-    background-position: center;
-    min-height: auto;
-  }
   
-  .background {
-    background-image: url("../images/pic03.jpg");
-    background-size: cover;
-    background-position: center;
-    min-height: 120vh;
-  }
+  
   
   /* Responsive styles */
   @media (max-width: 767px) {
@@ -132,6 +121,7 @@
     }
     .header {
       text-align: center;
+      color:antiquewhite
     }
   }
   .social-container {
@@ -142,7 +132,7 @@
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-color: #5c606b; /* LinkedIn blue color */
+    background-color: #000000; /* LinkedIn blue color */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -157,42 +147,7 @@
     width: 24px; /* Adjust the size as needed */
     height: 24px; /* Adjust the size as needed */
   }
-  .social-button:hover {
-    background-color: #0752b3;
-  }
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #333;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  .linkedin-button {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-color: #000000; /* LinkedIn blue color */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    margin-right: 20px;
-  }
-  .linkedin-button img {
-    width: 24px; /* Adjust the size as needed */
-    height: 24px; /* Adjust the size as needed */
-  }
-  .linkedin-button:hover {
-    background-color: #ffffff;
-  }
-  
+ 
 
   .animat {
     animation: slideIn 2s ease-in-out forwards;

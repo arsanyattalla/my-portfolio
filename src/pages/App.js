@@ -15,7 +15,7 @@ function App() {
   
   return (
     <div>
-      <div >
+      <div className='background-image' >
       <header className={`${animate ? "animat" : ""}`}>
         <div className="title">
           <img

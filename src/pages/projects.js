@@ -9,6 +9,7 @@ import filesystemimg from "../images/2345453.png";
 function Projects() {
   const [animate, setAnimate] = useState(false);
 
+
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -39,7 +40,7 @@ function Projects() {
   ];
 
   return (
-    <div className="background">
+    <div className="background-image">
       <header>
         <div className="title">
           <button className="p-3" onClick={() => (window.location.href = "/")}>
@@ -57,7 +58,6 @@ function Projects() {
                 <div key={index} className={blockClassName}>
                   <img className={imageClassName} src={project.image} alt={project.title} />
                   <div className="project-content">
-                    {/* Changed button to a div */}
                     <div className="project-title">
                       <strong>{project.title}</strong>
                     </div>

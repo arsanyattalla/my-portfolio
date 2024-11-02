@@ -1,47 +1,42 @@
 import Stack from "react-bootstrap/Stack";
-import React from "react";
 import "../styles/menu.css";
 import Modal from "react-modal";
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+import React, { useEffect, useState } from "react";
+
 
 export function Menu() {
-  // const navigateTo = (path) => {
-  //   fetch(`/api${path}`)
-  //     .then(response => {
-  //       if (response.redirected) {
-  //         window.location.href = response.url;
-  //       }
-  //     })
-  //     .catch(error => console.error('Error:', error));
-  // };
+  const [loading, setLoading] = useState(false);
+
+  const wait = (path) => {
+    setLoading(true); 
+    setTimeout(() => {
+      setLoading(false); 
+      window.location.href = path;
+    }, 1000);
+  };
+
   return (
+    <div>
+  
     <Stack direction="horizontal" gap={3}>
       <button
         className="p-2"
-        onClick={() => (window.location.href = "/aboutme")}
+        onClick={()=>wait("/aboutme")}
       >
         About me
       </button>
       <button
         className="p-2"
-        onClick={() => (window.location.href = "/experience")}
+        onClick={() => wait("/experience")}
       >
         Experience/Skills
       </button>
       <button 
         className="p-2"
-        onClick={() => (window.location.href = "/projects")}
+        onClick={() => wait("/projects")}
       >Projects</button>
     </Stack>
+    </div>
   );
 }
 export default Menu;

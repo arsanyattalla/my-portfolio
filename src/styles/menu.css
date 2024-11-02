@@ -5,7 +5,7 @@
   border-radius: 12px;
   font-size: 16px;
   color: white;
-  background-color: #5b6d94;
+  background-color: #121f38;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
   text-transform: uppercase;
@@ -16,7 +16,7 @@
 
 .p-2:hover,
 .p-3:hover {
-  background-color: #0842ad;
+  background-color: #061430;
   transform: scale(1.05);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -36,7 +36,7 @@
 .js-text {
   text-align: left;
   margin: 20px auto;
-  border: 2px solid #000000;
+  border: 2px solid #696464;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,7 +45,7 @@
 .line-breaker {
   border: 0;
   height: 1px;
-  background: #333;
+  background: #ffffff;
   margin: 10px 0;
 }
 
@@ -58,8 +58,8 @@
 .experience-block {
   flex: 1;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff00;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.692);
+  background-color: #4a7bac8f;
   border-radius: 20px;
   margin-top: 20px;
 }
@@ -67,6 +67,7 @@
 .js-texts {
   display: block;
   margin-bottom: 20px;
+  color:rgb(189, 197, 221)
 }
 
 .header {

@@ -11,7 +11,7 @@ function Experience() {
   }, []);
 
   return (
-    <div className="background">
+    <div className="background-image">
       <header>
         <div className="title">
           <button className="p-3" onClick={() => (window.location.href = "/")}>
@@ -55,7 +55,7 @@ function Experience() {
               <span className="js-texts">
                 <strong>IT Support Engineer</strong>
                 <br />
-                Qureez, Inc, [10/2021] – [1/2022]
+                Qureez, Inc, [10/2021] – [11/2022]
                 <br />
                 Full-Time
               </span>

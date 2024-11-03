@@ -5,6 +5,7 @@ import profileImg from "../images/linkedin1.png";
 import githubImg from "../images/github.jpg";
 import Stack from "react-bootstrap/Stack";
 import "../styles/animation.css";
+import ShootingStarsBackground from "../utils/shootingStars.js"
 
 function App() {
   const [animate, setAnimate] = useState(false);
@@ -15,6 +16,14 @@ function App() {
   
   return (
     <div>
+      <div className="shooting-stars">
+  <div className="shooting-star"></div>
+  <div className="shooting-star"></div>
+  <div className="shooting-star"></div>
+  <div className="shooting-star"></div>
+  <div className="shooting-star"></div>
+</div>
+
       <div className='background-image' >
       <header className={`${animate ? "animat" : ""}`}>
         <div className="title">

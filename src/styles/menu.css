@@ -127,3 +127,14 @@
     flex-direction: column;
   }
 }
+.menu-slide {
+  transition: transform 2s ease-in-out;
+}
+
+.slide-right {
+  transform: translateX(400%); 
+}
+
+.slide-reset {
+  transform: translateX(0);
+}

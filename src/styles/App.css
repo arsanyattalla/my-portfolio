@@ -37,12 +37,12 @@
   transform-origin: bottom left;
 }
 
-/* Random starting positions and animation delays */
-.shooting-star:nth-child(1) { left: 10%; top: 50%; animation-delay: 5s; } /* Bottom left to top right */
-.shooting-star:nth-child(3) { left: 70%; top: 50%; animation-delay: 2s; } /* Mid screen to top right */
-.shooting-star:nth-child(4) { right: 0; top: 70%; animation-delay: 3s; transform-origin: right; } /* Right to left */
 
-/* Keyframes for the shooting star movement */
+.shooting-star:nth-child(1) { left: 10%; top: 50%; animation-delay: 5s; } 
+.shooting-star:nth-child(3) { left: 70%; top: 50%; animation-delay: 2s; } 
+.shooting-star:nth-child(4) { right: 0; top: 70%; animation-delay: 3s; transform-origin: right; } 
+
+
 @keyframes shooting-star-animation {
   0% {
     opacity: 0;
@@ -61,7 +61,7 @@
   }
 }
 
-/* Reverse direction for right-to-left shooting star */
+
 .shooting-star:nth-child(4) {
   animation: shooting-star-reverse 3s ease-in-out infinite;
   animation-delay: 1s;

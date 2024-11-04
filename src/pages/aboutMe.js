@@ -13,7 +13,7 @@ function AboutMe() {
   return (
     <div className="background-image">
       <header>
-        <div className="title">
+        <div className={`title ${animate ? "animate-slideIn" : ""}`}>
           <button className="p-3" onClick={() => (window.location.href = "/")}>
             Home
           </button>

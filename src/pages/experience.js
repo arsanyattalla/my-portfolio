@@ -13,8 +13,8 @@ function Experience() {
   return (
     <div className="background-image">
       <header>
-        <div className="title">
-          <button className="p-3" onClick={() => (window.location.href = "/")}>
+      <div className={`title ${animate ? "animate-slideIn" : ""}`}>
+                  <button className="p-3" onClick={() => (window.location.href = "/")}>
             Home
           </button>
         </div>

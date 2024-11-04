@@ -16,8 +16,7 @@ root.render(
     <div className="background-image">
       <Router>
         <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/aboutme" element={<AboutMe />} />
+          <Route path="/" element={<Menu />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="projects" element={<Projects />} />
         </Routes>

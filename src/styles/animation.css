@@ -1,165 +1,157 @@
-/* General styles */
+
 .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.earth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.rotating-earth {
+  width: 100px;
+  height: 100px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: top;
+}
+
+.title-text {
+  font-family: "Arial Black", sans-serif;
+  color: rgb(165, 165, 165);
+  font-size: 35px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+.texts {
+  font-family: "Arial Black", sans-serif;
+  color: black;
+  font-size: 35px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .App-header {
+    padding: 10px;
+  }
+
+  .rotating-earth {
+    width: 80px;
+    height: 80px;
+  }
+
+  .title-text {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    padding: 0 20px;
     text-align: center;
   }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  .header {
+    text-align: center;
+    color: antiquewhite;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .earth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .rotating-earth {
-    width: 100px;
-    height: 100px;
-    animation: spin 10s linear infinite;
-  }
-  
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-size: cover;
-    background-position: top;
-  }
-  
-  .title-text {
-    font-family: "Arial Black", sans-serif;
-    color: rgb(165, 165, 165);
-    font-size: 35px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    margin-bottom: -20px;
-  }
-  .texts {
-    font-family: "Arial Black", sans-serif;
-    color: black;
-    font-size: 35px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    margin-bottom: -20px;
-  }
-  
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  
-  
-  
-  /* Responsive styles */
-  @media (max-width: 767px) {
-    .App-header {
-      padding: 10px;
-    }
-  
-    .rotating-earth {
-      width: 80px;
-      height: 80px;
-    }
-  
-    .title-text {
-      font-size: 1.5rem;
-    }
-  
-    .title {
-      padding: 0 20px;
-      text-align: center;
-    }
-    .header {
-      text-align: center;
-      color:antiquewhite
-    }
-  }
-  .social-container {
-    display: flex;
-    align-items: center; /* Align buttons vertically center */
-  }
-  .social-button {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-color: #000000; /* LinkedIn blue color */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    margin-right: 0px; /* Add some space between the buttons */
-    margin-top: 20px;
-  }
-  .social-button img {
-    width: 24px; /* Adjust the size as needed */
-    height: 24px; /* Adjust the size as needed */
-  }
- 
+}
+.social-container {
+  display: flex;
+  align-items: center; 
+}
+.social-button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #000000; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  margin-right: 0px; 
+  margin-top: 20px;
+}
+.social-button img {
+  width: 24px; 
+  height: 24px; 
+}
 
-  .animat {
-    animation: slideIn 2s ease-in-out forwards;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgb(240, 240, 240);
-    font-size: 20px;
-    
-  }
-  
-  
-  
+.animat {
+  animation: slideIn 2s ease-in-out forwards;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(240, 240, 240);
+  font-size: 20px;
+}

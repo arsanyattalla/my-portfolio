@@ -27,13 +27,7 @@ function AboutMe() {
         <div className={`js-text ${animate ? "animate-slideIn" : ""}`}>
           <p>
             <span className="js-texts">
-              Hello! I am Arsany Attalla, a passionate computer science graduate
-              with a love for technology, soccer, and exploring the world.
-              Originally hailing from the vibrant city of Cairo, Egypt, I've
-              always been fascinated by how technology can bridge gaps and bring
-              people together. My journey in computer science started at a young
-              age and has grown into a rewarding career where I continuously
-              seek to learn and innovate.
+              Hello! I am Arsany Attalla, I am a software engineer with three years of experience in developing and optimizing web applications in a fast-paced startup environment. Holding a degree in Computer Science, I have a strong foundation in various software engineering principles and practices. My expertise includes building responsive and user-friendly web applications using JavaScript frameworks like React, alongside backend technologies such as Node.js and Express. My experience in system architecture enables me to design scalable solutions that handle high traffic while ensuring reliability and efficiency.In addition, I am skilled in database management, working with both SQL and NoSQL databases, including PostgreSQL and MongoDB, to manage data effectively and optimize query performance. I have developed and integrated RESTful APIs and microservices to enhance application functionality and facilitate seamless communication between systems.
             </span>
             <span className="js-texts">
               When I'm not coding or working on exciting tech projects, you'll
@@ -46,11 +40,7 @@ function AboutMe() {
             <span className="js-texts">
               Traveling is another major part of my life. Each new destination
               offers a fresh perspective, inspiring me with diverse cultures and
-              ideas. Whether I'm wandering through the ancient streets of Rome,
-              hiking the scenic trails of the Swiss Alps, or savoring street
-              food in Bangkok, I cherish every opportunity to expand my horizons
-              and gather experiences that enrich my personal and professional
-              life.
+              ideas.
             </span>
             <span className="js-texts">
               Combining my love for technology, soccer, and travel, I aim to

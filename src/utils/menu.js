@@ -35,7 +35,7 @@ export function Menu() {
   if (currentComponent === "Projects") {
     return <Projects />;
   }
-  
+
   return (
     <div className="background-image">
       <div className="shooting-stars">
@@ -56,13 +56,22 @@ export function Menu() {
           </div>
 
           <Stack direction="horizontal" gap={3}>
-            <button className="p-2" onClick={() => handleButtonClick("AboutMe")}>
+            <button
+              className="p-2"
+              onClick={() => handleButtonClick("AboutMe")}
+            >
               About me
             </button>
-            <button className="p-2" onClick={() => handleButtonClick("Experience")}>
+            <button
+              className="p-2"
+              onClick={() => handleButtonClick("Experience")}
+            >
               Experience/Skills
             </button>
-            <button className="p-2" onClick={() => handleButtonClick("Projects")}>
+            <button
+              className="p-2"
+              onClick={() => handleButtonClick("Projects")}
+            >
               Projects
             </button>
           </Stack>

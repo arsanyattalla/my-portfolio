@@ -100,10 +100,9 @@
     background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
     background-position: center;
     background-repeat: no-repeat; 
-    min-height: auto;
+    min-height: 110vh;
     background-size: cover;
     background-position: center;
-    min-height: 120vh;
   }
   
  

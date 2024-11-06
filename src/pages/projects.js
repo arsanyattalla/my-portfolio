@@ -5,6 +5,7 @@ import profileImg from "../images/projects.png";
 import profile from "../images/profile.jpg";
 import logo from "../images/logo.png";
 import filesystemimg from "../images/2345453.png";
+import weather from "../images/clouds-1768967_1280.jpg"
 
 function Projects() {
   const [animate, setAnimate] = useState(false);
@@ -36,6 +37,14 @@ function Projects() {
       link: "https://github.com/arsanyattalla/my-portfolio/tree/master",
       image: profile,
       web: 'https://arsanyattallaportfolio.com'
+    },
+    {
+      title: "Weather App",
+      description:
+        "A real-time weather app built with React on the frontend and Python on the backend. It fetches weather data from an API and displays current conditions and forecasts for any location. The app demonstrates my skills in integrating frontend and backend technologies for a seamless user experience.",
+      link: "https://github.com/arsanyattalla/Weather-App/tree/master",
+      image: weather,
+      web: 'https://weatherapp-status.netlify.app'
     },
   ];
 

@@ -6,6 +6,7 @@ import profile from "../images/profile.jpg";
 import logo from "../images/logo.png";
 import filesystemimg from "../images/2345453.png";
 import weather from "../images/clouds-1768967_1280.jpg"
+import social from "../images/Screenshot.png"
 
 function Projects() {
   const [animate, setAnimate] = useState(false);
@@ -45,6 +46,14 @@ function Projects() {
       link: "https://github.com/arsanyattalla/Weather-App/tree/master",
       image: weather,
       web: 'https://weatherapp-status.netlify.app'
+    },
+    {
+      title: "Social Media App - Momentia",
+      description:
+        "Developed a social media app enabling users to post, like, and comment on content, fostering interaction and engagement through a clean and intuitive interface.",
+      link: "https://github.com/arsanyattalla/Weather-App/tree/master",
+      image: social,
+      web: 'http://18.191.91.187:3000/'
     },
   ];
 

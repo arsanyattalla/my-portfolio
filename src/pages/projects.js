@@ -51,7 +51,7 @@ function Projects() {
       title: "Social Media App - Momentia",
       description:
         "Developed a social media app that allows users to share posts, like, and comment on content, promoting interaction and community engagement. Implemented a user-friendly interface with smooth navigation to enhance the overall experience",
-      link: "https://github.com/arsanyattalla/Weather-App/tree/master",
+      link: "https://github.com/arsanyattalla/Social-Media-App",
       image: social,
       web: 'http://18.191.91.187:3000/'
     },

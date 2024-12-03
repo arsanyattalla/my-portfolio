@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import AboutMe from "../pages/aboutMe";
 import Experience from "../pages/experience";
 import Projects from "../pages/projects.js";
+import Skills from '../pages/skills.js'
 import profileImg from "../images/linkedin1.png";
 
 export function Menu() {
@@ -34,6 +35,9 @@ export function Menu() {
   }
   if (currentComponent === "Projects") {
     return <Projects />;
+  }
+  if (currentComponent === "Skills") {
+    return <Skills />;
   }
 
   return (
@@ -66,13 +70,19 @@ export function Menu() {
               className="p-2"
               onClick={() => handleButtonClick("Experience")}
             >
-              Experience/Skills
+              Experience
             </button>
             <button
               className="p-2"
               onClick={() => handleButtonClick("Projects")}
             >
               Projects
+            </button>
+            <button
+              className="p-2"
+              onClick={() => handleButtonClick("Skills")}
+            >
+              Skills
             </button>
           </Stack>
           <div className="buttonss">

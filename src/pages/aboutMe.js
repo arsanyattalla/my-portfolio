@@ -2,22 +2,31 @@ import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 import "../styles/menu.css";
 import profimeImg from "../images/profile.jpg";
+import { FaHome } from "react-icons/fa";
+import DropdownMenu from "../utils/DropdownMenu";
 
 function AboutMe() {
   const [animate, setAnimate] = useState(false);
+  const [selectedComponent, setSelectedComponent] = useState(null);
 
   useEffect(() => {
     setAnimate(true);
   }, []);
-
+  const handleMenuSelection = (component) => {
+    setSelectedComponent(component);
+  };
   return (
     <div className="background-image">
       <header>
-        <div className={`title ${animate ? "animate-slideIn" : ""}`}>
-          <button className="p-3" onClick={() => (window.location.href = "/")}>
-            Home
-          </button>
-        </div>
+        
+      <DropdownMenu
+          
+          placeholder="Menu"
+          onOptionSelected={handleMenuSelection}
+        />
+        
+        {!selectedComponent && (
+          <>
         <div className={`about-container' ${animate ? "animate-slideIn" : ""}`}>
           <p className="header">About Me</p>
           <div className="profile-pic-container">
@@ -51,6 +60,8 @@ function AboutMe() {
             </span>
           </p>
         </div>
+        </>
+         )}
       </header>
     </div>
   );

@@ -7,11 +7,16 @@ import logo from "../images/logo.png";
 import filesystemimg from "../images/2345453.png";
 import weather from "../images/clouds-1768967_1280.jpg"
 import social from "../images/Screenshot.png"
+import { FaHome } from "react-icons/fa";
+import DropdownMenu from "../utils/DropdownMenu";
 
 function Projects() {
   const [animate, setAnimate] = useState(false);
+  const [selectedComponent, setSelectedComponent] = useState(null);
 
-
+  const handleMenuSelection = (component) => {
+    setSelectedComponent(component);
+  };
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -60,12 +65,16 @@ function Projects() {
   return (
     <div className="background-image">
       <header>
+      <DropdownMenu
+          
+          placeholder="Menu"
+          onOptionSelected={handleMenuSelection}
+        />
       <div className={`title ${animate ? "animate-slideIn" : ""}`}>
-          <button className="p-3" onClick={() => (window.location.href = "/")}>
-            Home
-          </button>
+        
         </div>
-        <div className={`about-container ${animate ? "animate-slideIn" : ""}`}>
+          {!selectedComponent && (
+          <>
           <p className="header">Projects</p>
           <div className="projects-container">
             {projects.map((project, index) => {
@@ -95,7 +104,9 @@ function Projects() {
               );
             })}
           </div>
-        </div>
+        
+        </>
+      )}
       </header>
     </div>
   );

@@ -1,0 +1,172 @@
+/* General Container Styles */
+.background-image {
+    background: linear-gradient(to bottom, #223949, #121d33);
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #cfd8dc;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Header Styling */
+  .header {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #cfd8dc;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  /* Shooting Stars Aesthetic */
+  .shooting-stars {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(white, transparent);
+    opacity: 0;
+    animation: shooting-star-animation 5s ease-in-out infinite;
+    transform-origin: bottom left;
+  }
+  
+  .shooting-star:nth-child(1) { left: 10%; top: 50%; animation-delay: 5s; }
+  .shooting-star:nth-child(3) { left: 70%; top: 50%; animation-delay: 2s; }
+  .shooting-star:nth-child(4) { right: 0; top: 70%; animation-delay: 3s; transform-origin: right; }
+  
+  @keyframes shooting-star-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(0) translateX(0) rotate(45deg);
+    }
+    10% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-500px) translateX(500px) rotate(45deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-600px) translateX(600px) rotate(45deg);
+    }
+  }
+  
+  /* Skill Cards */
+  .icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .icons {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    width: 120px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .icons:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icons img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+  }
+  
+  .icons img:hover {
+    transform: rotate(10deg) scale(1.2);
+  }
+  
+  .icons p {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #cfd8dc;
+  }
+  
+  /* Buttons */
+  button {
+    background: transparent;
+    border: 2px solid #cfd8dc;
+    color: #cfd8dc;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .background-image {
+    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: 110vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  button:hover {
+    background: #cfd8dc;
+    color: #223949;
+    transform: scale(1.1);
+  }
+  
+  /* Dynamic Text Titles */
+  .title1 {
+    font-size: 3rem;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+    animation: glow 2s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+    }
+    to {
+      text-shadow: 0 0 20px #ff9900, 0 0 40px #ff6600;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header {
+      font-size: 2rem;
+    }
+  
+    .icons {
+      width: 100px;
+      padding: 10px;
+    }
+  
+    .icons img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  

@@ -6,6 +6,7 @@ import App from "./pages/App";
 import AboutMe from "./pages/aboutMe";
 import Experience from "./pages/experience";
 import Projects from "./pages/projects.js"
+import Skills from './pages/skills.js'
 import Menu from "./utils/menu";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/App.css";
@@ -19,6 +20,7 @@ root.render(
           <Route path="/" element={<Menu />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="skills" element={<Skills />} />
         </Routes>
       </Router>
     </div>

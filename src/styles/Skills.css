@@ -1,12 +1,11 @@
 /* General Container Styles */
-.background-image {
+.background-images {
     background: linear-gradient(to bottom, #223949, #121d33);
     min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     color: #cfd8dc;
     font-family: "Poppins", sans-serif;
     overflow: hidden;
@@ -121,7 +120,7 @@
     font-weight: bold;
     transition: background 0.3s ease, transform 0.3s ease;
   }
-  .background-image {
+  .background-images {
     background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
     background-position: center;
     background-repeat: no-repeat; 

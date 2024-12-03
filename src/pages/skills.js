@@ -88,7 +88,7 @@ function Skills() {
   ];
 
   return (
-    <div className="background-image">
+    <div className="background-images">
       <header>
       <DropdownMenu
           

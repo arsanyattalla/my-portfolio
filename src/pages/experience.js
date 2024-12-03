@@ -51,7 +51,7 @@ function Experience() {
                     <strong className="title">Work Experience</strong>
                     <br />
                     <br />
-                    <strong>Software Engineer - Quality Assurance</strong>
+                    <strong>Software Engineer</strong>
                     <br />
                     Qureez, Inc. [11/2022] – [05/2024]
                     <br />

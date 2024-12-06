@@ -8,6 +8,8 @@ import Experience from "../pages/experience";
 import Projects from "../pages/projects.js";
 import Skills from '../pages/skills.js'
 import profileImg from "../images/linkedin1.png";
+import { FaHome } from "react-icons/fa";
+
 
 export function Menu() {
   const [loading, setLoading] = useState(false);

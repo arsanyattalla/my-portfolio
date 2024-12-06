@@ -70,9 +70,8 @@ function Projects() {
           placeholder="Menu"
           onOptionSelected={handleMenuSelection}
         />
-      <div className={`title ${animate ? "animate-slideIn" : ""}`}>
+      <div className={`titl ${animate ? "animate-slideIn" : ""}`}>
         
-        </div>
           {!selectedComponent && (
           <>
           <p className="header">Projects</p>
@@ -107,6 +106,8 @@ function Projects() {
         
         </>
       )}
+              </div>
+
       </header>
     </div>
   );

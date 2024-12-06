@@ -52,16 +52,34 @@
 .experience-content {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Adjust spacing between the two blocks */
+  gap: 20px; 
 }
+
+.dynamic-text {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #0d203a;
+  color: #e7e7e7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.dynamic-text:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  background-color: #0d1f44; 
+}
+
 
 .experience-block {
   flex: 1;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.692);
-  background-color: #4a7bac8f;
+  background-color: #4a7bac62;
   border-radius: 20px;
   margin-top: 20px;
+  margin: 30px;
 }
 
 .js-texts {

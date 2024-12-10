@@ -1,10 +1,43 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
 .social-container {
    
   justify-content: center; 
   align-items: right;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-
+.animate-slideIn {
+  animation: fadeIn 1.2s ease-in-out;
+}
+.about-text-container {
+  max-width: 800px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin: auto ;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color:white;
+  
+}
 .buttonss {
   display: flex; 
   align-items: center; 
@@ -13,7 +46,7 @@
 
 .timeline {
   padding: 20px;
-  margin: 60px auto;
+  margin: 0px auto;
   max-width: 600px;
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../styles/projects.css";
 import "../styles/menu.css";
 import profileImg from "../images/projects.png";
-import profile from "../images/profile.jpg";
+import profile from "../images/154-1545805_portfolio-icons-code-web-development-logo.png";
 import logo from "../images/logo.png";
 import filesystemimg from "../images/2345453.png";
 import weather from "../images/clouds-1768967_1280.jpg"
@@ -75,6 +75,9 @@ function Projects() {
           {!selectedComponent && (
           <>
           <p className="header">Projects</p>
+          <div className="profile-pic-container">
+                <img className="profile-pic" src='https://www.springboard.com/blog/wp-content/uploads/2022/03/what-is-a-coding-project.png' alt="Profile" />
+              </div>
           <div className="projects-container">
             {projects.map((project, index) => {
               const imageClassName = index === 0 ? "project-image drillshare-image" : "project-image";

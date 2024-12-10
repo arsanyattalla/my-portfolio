@@ -11,6 +11,44 @@
   gap: 1px; 
 }
 
+.timeline {
+  padding: 20px;
+  margin: 60px auto;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  display: inline;
+}
+
+.timeline-item {
+  border-left: 2px solid #ddd;
+  padding: 10px 20px;
+  position: relative;
+  margin-bottom: 20px;
+  color: white;
+
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 10px;
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: #9e9b9b;
+  margin-bottom: 5px;
+  display: block;
+}
 
 
 .header {

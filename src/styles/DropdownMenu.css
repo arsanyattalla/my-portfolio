@@ -56,7 +56,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgb(3, 22, 59);
+    background: rgb(37, 65, 119);
     border: 1px solid #042142;
     border-radius: 4px;
     margin-top: 4px;
@@ -66,13 +66,48 @@
     max-height: 0; /* Initially hidden */
     overflow: hidden; /* Hide overflowing content */
     transition: max-height 0.4s ease; /* Smooth transition */
+    padding:10px;
+  }
+  
+  @keyframes slideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+      transform: scaleY(0.5); /* Start slightly compressed */
+    }
+    to {
+      max-height: 200px; /* Adjust to the expected height */
+      opacity: 1;
+      transform: scaleY(1); /* Fully expanded */
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      max-height: 200px; /* Adjust to the expected height */
+      opacity: 1;
+      transform: scaleY(1); /* Fully expanded */
+    }
+    to {
+      max-height: 0;
+      opacity: 0;
+      transform: scaleY(0.5); /* Slightly compressed */
+    }
   }
   
   .dropdown-menu.open {
-    max-height: 200px; /* Adjust based on expected menu height */
-    overflow: visible;
+    animation: slideDown 0.4s ease forwards; /* Slide down animation */
   }
-
+  
+  .dropdown-menu.closed {
+    animation: slideUp 0.4s ease forwards; /* Slide up animation */
+  }
+  
+  .dropdown-item.highlighted {
+    background-color: #061430; /* Highlight background color */
+    color: #ffffff; /* Highlight text color */
+    font-weight: bold; /* Optional: Make it stand out */
+  }
   
   .dropdown-item {
     padding: 8px 12px;
@@ -81,6 +116,6 @@
   }
   
   .dropdown-item:hover {
-    background-color: #060d4b;
+    background-color: #1f2329;
   }
   

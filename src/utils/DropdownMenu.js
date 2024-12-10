@@ -58,18 +58,20 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
             <span className="dropdown-arrow">{isOpen ? "▲" : "▼"}</span>
           </button>
           {isOpen && (
-            <ul className="">
-              {options.map((option, index) => (
-                <li
-                  key={index}
-                  className="p-3"
-                  onClick={() => handleOptionClick(option)}
-                >
-                  {option.label}
-                </li>
-              ))}
-            </ul>
-          )}
+  <ul className={`dropdown-menu ${isOpen ? "open" : ""}`}>
+    {options.map((option, index) => (
+      <li
+        key={index}
+        className="dropdown-item"
+        onClick={() => handleOptionClick(option)}
+      >
+        {option.label}
+      </li>
+    ))}
+  </ul>
+)}
+
+          
         </div>
       ) : (
         <div>{selectedOption.component}</div>

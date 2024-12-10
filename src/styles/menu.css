@@ -96,7 +96,12 @@
   font-family: 'Neue Helvetica';
 }
 
-.profile-pic-container:hover {
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic-container:hover{
   transform: scale(1.1);
 }
 
@@ -132,7 +137,10 @@ margin-bottom: 25px;
     width: 100%;
   }
 
- 
+  .profile-pic-container {
+    justify-content: center;
+    margin-right: 0;
+  }
 
   .about-container {
     flex-direction: column;

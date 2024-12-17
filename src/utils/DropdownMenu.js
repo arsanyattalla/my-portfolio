@@ -9,7 +9,7 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const dropdownRef = useRef(null);
-  const options=[
+  const options = [
     {
       label: "Home",
       onClick: () => {
@@ -20,7 +20,7 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
     { label: "Experience", component: <Experience /> },
     { label: "Skills", component: <Skills /> },
     { label: "Projects", component: <Projects /> },
-  ]
+  ];
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -33,8 +33,8 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
     }
     setIsOpen(false);
     if (onOptionSelected) {
-        onOptionSelected(option.component || null); // Pass the component or null
-      }
+      onOptionSelected(option.component || null); // Pass the component or null
+    }
   };
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -58,20 +58,18 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
             <span className="dropdown-arrow">{isOpen ? "▲" : "▼"}</span>
           </button>
           {isOpen && (
-  <ul className={`dropdown-menu ${isOpen ? "open" : ""}`}>
-    {options.map((option, index) => (
-      <li
-        key={index}
-        className="dropdown-item"
-        onClick={() => handleOptionClick(option)}
-      >
-        {option.label}
-      </li>
-    ))}
-  </ul>
-)}
-
-          
+            <ul className={`dropdown-menu ${isOpen ? "open" : ""}`}>
+              {options.map((option, index) => (
+                <li
+                  key={index}
+                  className="dropdown-item"
+                  onClick={() => handleOptionClick(option)}
+                >
+                  {option.label}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ) : (
         <div>{selectedOption.component}</div>
@@ -79,7 +77,5 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
     </div>
   );
 };
-
-
 
 export default DropdownMenu;

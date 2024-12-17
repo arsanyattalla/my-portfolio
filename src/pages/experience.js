@@ -34,6 +34,12 @@ function Experience() {
                 <img className="profile-pic" src={profileImg} alt="Profile" />
               </div>
               <div className="timeline">
+              <div className="timeline-item">
+                  <span className="timeline-date">09/2024 – Present</span>
+                  <strong>Software Engineer For AI Data Training</strong>
+                  <br />
+                  Outlier (contract)
+                </div>
                 <div className="timeline-item">
                   <span className="timeline-date">11/2022 – 05/2024</span>
                   <strong>Software Engineer</strong>

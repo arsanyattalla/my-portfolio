@@ -41,18 +41,13 @@ function Experience() {
                   Outlier (contract)
                 </div>
                 <div className="timeline-item">
-                  <span className="timeline-date">11/2022 – 05/2024</span>
+                  <span className="timeline-date">10/2021 – 05/2024</span>
                   <strong>Software Engineer</strong>
                   <br />
                   Qureez, Inc. (Full-Time)
                 </div>
 
-                <div className="timeline-item">
-                  <span className="timeline-date">10/2021 – 11/2022</span>
-                  <strong>IT Support Engineer</strong>
-                  <br />
-                  Qureez, Inc. (Full-Time)
-                </div>
+                
 
                 <div className="timeline-item">
                   <span className="timeline-date">05/2021 – 08/2021</span>

@@ -20,7 +20,7 @@ function AboutMe() {
     <div className="background-image">
       
         <DropdownMenu
-          placeholder="Menu"
+          placeholder="About Me"
           onOptionSelected={handleMenuSelection}
         />
 

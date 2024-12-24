@@ -92,7 +92,7 @@ function Skills() {
       <header>
       <DropdownMenu
           
-          placeholder="Menu"
+          placeholder="Skills"
           onOptionSelected={handleMenuSelection}
         />
         {!selectedComponent && (

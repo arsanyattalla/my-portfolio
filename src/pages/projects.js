@@ -67,7 +67,7 @@ function Projects() {
       <header>
       <DropdownMenu
           
-          placeholder="Menu"
+          placeholder="Projects"
           onOptionSelected={handleMenuSelection}
         />
       <div className={`titl ${animate ? "animate-slideIn" : ""}`}>

@@ -20,7 +20,7 @@ function Experience() {
     <div className="background-image">
       <header>
         <DropdownMenu
-          placeholder="Menu"
+          placeholder="Experience"
           onOptionSelected={handleMenuSelection}
         />
 

@@ -29,8 +29,10 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
   };
 
   const handleOptionClick = (option) => {
-    if (selectedOption?.label === option.label) {
+    if (placeholder === option.label) {
+      setIsOpen(false)
       return;
+
     }
 
     if (option.onClick) {

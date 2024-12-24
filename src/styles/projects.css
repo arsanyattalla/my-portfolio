@@ -100,9 +100,10 @@
     background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
     background-position: center;
     background-repeat: no-repeat; 
-    min-height: 110vh;
     background-size: cover;
+    min-height: 100vh;
     background-position: center;
+    width: 100%;
   }
   
  
@@ -111,7 +112,9 @@
     .App-header {
       padding: 10px;
     }
-  
+    .background-image{
+      
+    }
     .rotating-earth {
       width: 80px;
       height: 80px;

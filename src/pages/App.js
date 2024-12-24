@@ -12,31 +12,9 @@ function App() {
 
   return (
     <div>
-      <div className="shooting-stars">
-        <div className="shooting-star"></div>
-        <div className="shooting-star"></div>
-        <div className="shooting-star"></div>
-        <div className="shooting-star"></div>
-        <div className="shooting-star"></div>
-      </div>
-
       <div className="background-image">
         <header className={`${animate ? "animat" : ""}`}>
-          <div className="title">
-            <img
-              className="rotating-earth"
-              src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
-              alt="Rotating Earth"
-            />
-
-            <h1 className="title-text">Welcome to Arsany's Portfolio</h1>
-            <div classname="texts">
-              <p>Software Engineer</p>
-            </div>
-          </div>
-          <div>
-            <Menu />
-          </div>
+       
 
           <div className="buttonss">
             <a

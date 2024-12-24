@@ -4,9 +4,9 @@
   }
   .p-2,
 .p-3 {
-  padding: 10px 20px;
+  margin: 10px;
   border: none;
-  border-radius: 12px;
+  border-radius: 25px;
   font-size: 16px;
   color: white;
   background-color: #121f38;
@@ -15,9 +15,15 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 0 5px;
 }
 
+@media (max-width: 767px) {
+  .p-2 {
+margin: 5px ;
+padding:15px ;
+max-width: 45vh;
+  }
+}
 .p-2:hover,
 .p-3:hover {
   background-color: #061430;

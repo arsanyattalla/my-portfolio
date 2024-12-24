@@ -43,7 +43,7 @@ export function Menu() {
   }
 
   return (
-    <div className="background-image">
+    <div className="backgroun-image">
       <div className="shooting-stars">
         {[...Array(5)].map((_, index) => (
           <div className="shooting-star" key={index}></div>

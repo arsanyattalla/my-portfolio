@@ -5,10 +5,12 @@ import Projects from "../pages/projects";
 import Skills from "../pages/skills";
 import AboutMe from "../pages/aboutMe";
 import Experience from "../pages/experience";
+
 const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const dropdownRef = useRef(null);
+
   const options = [
     {
       label: "Home",
@@ -21,21 +23,29 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
     { label: "Skills", component: <Skills /> },
     { label: "Projects", component: <Projects /> },
   ];
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   const handleOptionClick = (option) => {
-    if (option.onClick) {
-      option.onClick(); // Call the onClick function if it exists
-    } else {
-      setSelectedOption(option);
+    if (selectedOption?.label === option.label) {
+      return;
     }
+
+    if (option.onClick) {
+      option.onClick(); // Navigate or perform custom logic
+    } else {
+      setSelectedOption(option); // Update the selected option
+    }
+
     setIsOpen(false);
+
     if (onOptionSelected) {
-      onOptionSelected(option.component || null); // Pass the component or null
+      onOptionSelected(option.component || null); // Notify parent component
     }
   };
+
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false);
@@ -51,7 +61,7 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
 
   return (
     <div>
-      {!selectedOption || !selectedOption.component ? (
+      {!selectedOption?.component ? (
         <div className={`dropdown ${className}`} ref={dropdownRef}>
           <button className="p-3" onClick={handleToggle}>
             {selectedOption ? selectedOption.label : placeholder}
@@ -72,7 +82,9 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
           )}
         </div>
       ) : (
-        <div>{selectedOption.component}</div>
+        <div>
+          {selectedOption?.label && <div>{selectedOption.component}</div>}
+        </div>
       )}
     </div>
   );

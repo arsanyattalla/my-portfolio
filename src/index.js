@@ -18,9 +18,7 @@ root.render(
       <Router>
         <Routes>
           <Route path="/" element={<Menu />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="skills" element={<Skills />} />
+          
         </Routes>
       </Router>
     </div>

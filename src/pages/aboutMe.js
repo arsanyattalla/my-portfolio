@@ -18,7 +18,7 @@ function AboutMe() {
 
   return (
     <div className="background-image">
-      <header className="header-container">
+      
         <DropdownMenu
           placeholder="Menu"
           onOptionSelected={handleMenuSelection}
@@ -58,7 +58,6 @@ function AboutMe() {
             </div>
           </>
         )}
-      </header>
     </div>
   );
 }

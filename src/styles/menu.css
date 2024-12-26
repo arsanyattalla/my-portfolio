@@ -87,9 +87,7 @@
   justify-content: center;
 }
 
-.profile-pic-container:hover{
-  transform: scale(1.1);
-}
+
 
 .profile-pic {
   border-radius: 50%;

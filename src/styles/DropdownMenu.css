@@ -4,6 +4,10 @@
   }
   .p-2,
 .p-3 {
+  font-family: cursive; /* System default cursive font */
+  font-weight: 300; /* Thin weight */
+  font-style: italic; /* Adds a cursive, slanted look */
+  font-size: 35px; 
   margin: 10px;
   border: none;
   border-radius: 25px;
@@ -43,7 +47,6 @@ max-width: 45vh;
   box-shadow: 0 0 0 3px rgba(16, 17, 16, 0.5);
 }
   .dropdown-toggle {
-    background-color: #052758;
     border: 1px solid #031530;
     border-radius: 4px;
     padding: 8px 12px;
@@ -97,22 +100,22 @@ max-width: 45vh;
     to {
       max-height: 0;
       opacity: 0;
-      transform: scaleY(0.5); /* Slightly compressed */
+      transform: scaleY(0.5); 
     }
   }
   
   .dropdown-menu.open {
-    animation: slideDown 0.4s ease forwards; /* Slide down animation */
+    animation: slideDown 0.4s ease forwards; 
   }
   
   .dropdown-menu.closed {
-    animation: slideUp 0.4s ease forwards; /* Slide up animation */
+    animation: slideUp 0.4s ease forwards; 
   }
   
   .dropdown-item.highlighted {
-    background-color: #061430; /* Highlight background color */
-    color: #ffffff; /* Highlight text color */
-    font-weight: bold; /* Optional: Make it stand out */
+    background-color: #061430; 
+    color: #ffffff; 
+    font-weight: bold; 
   }
   
   .dropdown-item {

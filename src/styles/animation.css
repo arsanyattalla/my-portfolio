@@ -89,12 +89,14 @@
 }
 
 .title-text {
-  font-family: "Arial Black", sans-serif;
-  color: rgb(165, 165, 165);
-  font-size: 35px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  margin-bottom: -20px;
+  font-family: cursive; /* Default system cursive font */
+  font-weight: 400; /* A balanced weight for elegance */
+  font-style: italic; /* Emphasizes cursive appearance */
+  font-size: 35px; /* Adjust size as desired */
+  letter-spacing: -1.5px; /* Slight spacing for sophistication */
+  line-height: 1.2; 
+  color: #797676;  
+  margin-bottom: -18px;
 }
 .texts {
   font-family: "Arial Black", sans-serif;

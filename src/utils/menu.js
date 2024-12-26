@@ -29,6 +29,7 @@ export function Menu() {
     }, 500);
   };
 
+  
   if (currentComponent === "AboutMe") {
     return <AboutMe />;
   }
@@ -41,6 +42,8 @@ export function Menu() {
   if (currentComponent === "Skills") {
     return <Skills />;
   }
+
+
 
   return (
     <div className="backgroun-image">

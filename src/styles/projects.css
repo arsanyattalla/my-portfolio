@@ -109,17 +109,7 @@
   margin-bottom: 500px;
   }
 /* Adjustments for mobile devices */
-@media (max-width: 768px) {
-  .background-image {
-      background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain; /* Change from 'cover' to 'contain' for better scaling */
-      background-attachment: scroll; /* 'scroll' instead of 'fixed' on mobile */
-      margin-bottom: 0;
-  }
-}
- 
+
   
   @media (max-width: 767px) {
     .App-header {
@@ -140,6 +130,17 @@
       text-align: center;
     }
   }
+  @media (max-width: 767px) {
+    .background-image {
+        background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+        margin-bottom: 0;
+        transform: scale(1); /* Scale it properly */
+    }
+}
   
   .socia {
    

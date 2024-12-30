@@ -90,11 +90,7 @@ function Skills() {
   return (
     <div className="background-images">
       <header>
-      <DropdownMenu
-          
-          placeholder="Skills"
-          onOptionSelected={handleMenuSelection}
-        />
+     
         {!selectedComponent && (
             <>
         <div className={`about-container ${animate ? "animate-slideIn" : ""}`}>

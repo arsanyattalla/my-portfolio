@@ -19,11 +19,7 @@ function Experience() {
   return (
     <div className="background-image">
       <header>
-        <DropdownMenu
-          placeholder="Experience"
-          onOptionSelected={handleMenuSelection}
-        />
-
+       
         {!selectedComponent && (
           <>
             <div

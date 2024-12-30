@@ -65,11 +65,7 @@ function Projects() {
   return (
     <div className="background-image">
       <header>
-      <DropdownMenu
-          
-          placeholder="Projects"
-          onOptionSelected={handleMenuSelection}
-        />
+     
       <div className={`titl ${animate ? "animate-slideIn" : ""}`}>
         
           {!selectedComponent && (

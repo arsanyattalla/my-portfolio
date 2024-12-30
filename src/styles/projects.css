@@ -101,9 +101,12 @@
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
-    min-height: 100vh;
-    background-position: center;
-    width: 100%;
+    background-size: cover; /* Ensures the image covers the entire screen without distortion */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
+  background-attachment: fixed; /* Keeps the background static during scroll */
+  background-position: center; /* Centers the image */
+  background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent overlay for blending */
+  margin-bottom: 500px;
   }
   
  
@@ -112,9 +115,7 @@
     .App-header {
       padding: 10px;
     }
-    .background-image{
-      
-    }
+  
     .rotating-earth {
       width: 80px;
       height: 80px;

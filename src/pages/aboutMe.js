@@ -19,10 +19,7 @@ function AboutMe() {
   return (
     <div className="background-image">
       
-        <DropdownMenu
-          placeholder="About Me"
-          onOptionSelected={handleMenuSelection}
-        />
+      
 
         {!selectedComponent && (
           <>

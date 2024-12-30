@@ -135,8 +135,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed; /* Keeps the background static during scroll */
-        margin-bottom: 300px;
+        background-attachment: fixed;
+        margin-bottom: 0;
     }
 }
   

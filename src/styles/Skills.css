@@ -120,6 +120,23 @@
     font-weight: bold;
     transition: background 0.3s ease, transform 0.3s ease;
   }
+
+  @media screen and (max-width: 768px) {
+    .background-images {
+    
+      background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+      background-position: center;
+      background-repeat: no-repeat; 
+      background-size: cover;
+      background-size: cover; /* Ensures the image covers the entire screen without distortion */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    background-attachment: fixed; /* Keeps the background static during scroll */
+    background-position: center; /* Centers the image */
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent overlay for blending */
+  margin-bottom: -500px;
+  }
+    
+  }
   .background-images {
     
       background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");

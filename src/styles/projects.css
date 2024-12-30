@@ -138,7 +138,6 @@
         background-size: cover;
         background-attachment: scroll;
         margin-bottom: 0;
-        transform: scale(1); /* Scale it properly */
     }
 }
   

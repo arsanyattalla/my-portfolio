@@ -108,19 +108,15 @@
   background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent overlay for blending */
   margin-bottom: 500px;
   }
-  @media screen and (max-width: 768px) {
-    .background-image {
-    
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+  .background-image {
       background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
       background-position: center;
-      background-repeat: no-repeat; 
-      background-size: cover;
-      background-size: cover; /* Ensures the image covers the entire screen without distortion */
-    background-repeat: no-repeat; /* Prevents tiling of the image */
-    background-attachment: fixed; /* Keeps the background static during scroll */
-    background-position: center; /* Centers the image */
-    background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent overlay for blending */
-  margin-bottom: 500px;
+      background-repeat: no-repeat;
+      background-size: contain; /* Change from 'cover' to 'contain' for better scaling */
+      background-attachment: scroll; /* 'scroll' instead of 'fixed' on mobile */
+      margin-bottom: 0;
   }
 }
  

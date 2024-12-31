@@ -97,7 +97,7 @@ export function Menu() {
 
 
   return (
-    <div>
+    <div >
       <canvas
         ref={canvasRef}
         className="shooting-star-canvas"

@@ -102,15 +102,18 @@
     }
   }
   
-  .background-image {
-    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover; /* Ensures the image covers the entire screen without distortion */
-  background-attachment: fixed; /* Keeps the background static during scroll */
-  background-position: center; /* Centers the image */
+  .backgroun-image{
+    margin-bottom: 200px;
   }
-/* Adjustments for mobile devices */
+  .background-image {
+background-attachment: fixed;  
+ 
+    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Covers the screen without distortion */
+    background-position: center;
+}
+
 
   
   @media (max-width: 767px) {
@@ -216,37 +219,5 @@
   .animate-slideIn {
     animation: slideIn 2s ease-in-out forwards;
   }
-  .backgroun-image{
-    margin-bottom: 200px;
-  }
-  @media (max-width: 1024px) {
-    .background-image {
-      background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
-      background-position: center;
-      background-repeat: no-repeat; 
-      background-size: cover; /* Ensures the image covers the entire screen without distortion */
-    background-position: center; /* Centers the image */
-    }
-}
-
-/* Small screens (large phones, small tablets) */
-@media (max-width: 768px) {
-  .background-image {
-    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover; /* Ensures the image covers the entire screen without distortion */
-  background-position: center; /* Centers the image */
-  }
-}
-
-/* Extra-small screens (phones) */
-@media (max-width: 480px) {
-  .background-image {
-    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
   
-
-}
-}
+ 

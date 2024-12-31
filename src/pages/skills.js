@@ -88,7 +88,7 @@ function Skills() {
   ];
 
   return (
-    <div >
+    <div>
       <header>
      
         {!selectedComponent && (

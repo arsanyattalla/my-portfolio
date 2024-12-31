@@ -58,17 +58,17 @@ function Skills() {
     {
       skill: "Selenium",
       image:
-        "https://banner2.cleanpng.com/20190320/rpt/kisspng-selenium-test-automation-software-testing-computer-1713900348299.webp",
+        "https://e7.pngegg.com/pngimages/175/494/png-clipart-selenium-computer-icons-test-automation-software-testing-selenium-angle-text.png",
     },
     {
       skill: "ExpressJS",
       image:
-        "http://www.jonclawson.com/sites/jonclawson.com/files/imagecache/small/expressjs_logo.png",
+        "https://e7.pngegg.com/pngimages/925/447/png-clipart-express-js-node-js-javascript-mongodb-node-js-text-trademark-thumbnail.png",
     },
     {
       skill: "TestNG",
       image:
-        "https://banner2.cleanpng.com/20180816/eej/f5e89d12b09a007df882894bf58820c4.webp",
+        "https://e7.pngegg.com/pngimages/640/776/png-clipart-testng-logo-software-testing-software-framework-computer-icons-automation-testing-angle-text-thumbnail.png",
     },
   ];
 
@@ -79,11 +79,11 @@ function Skills() {
     },
     {
       skill: "MySQL",
-      image: "https://banner2.cleanpng.com/20180614/bgj/aa7ffc9id.webp",
+      image: "https://e7.pngegg.com/pngimages/747/798/png-clipart-mysql-mysql-thumbnail.png",
     },
     {
       skill: "Redis",
-      image: "https://banner2.cleanpng.com/20180331/xwe/avh53unx5.webp",
+      image: "https://e7.pngegg.com/pngimages/66/424/png-clipart-redis-distributed-cache-database-caching-wrapper-angle-logo.png",
     },
   ];
 

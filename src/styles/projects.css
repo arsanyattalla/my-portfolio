@@ -6,6 +6,12 @@
     justify-content: center;
     
   }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
   
   .project-block {
     background-color: #335e99c5;
@@ -101,11 +107,8 @@
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; /* Ensures the image covers the entire screen without distortion */
-  background-repeat: no-repeat; /* Prevents tiling of the image */
   background-attachment: fixed; /* Keeps the background static during scroll */
   background-position: center; /* Centers the image */
-  background-color: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent overlay for blending */
-  margin-bottom: 500px;
   }
 /* Adjustments for mobile devices */
 
@@ -122,24 +125,16 @@
   
     .title-text {
       font-size: 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
     }
   
     .title {
       padding: 0 20px;
       text-align: center;
     }
-  }
-  @media (max-width: 767px) {
-    .background-image {
-        background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        margin-bottom: 0;
-    }
-}
   
+  }
+ 
   .socia {
    
     justify-content: center; 
@@ -221,4 +216,37 @@
   .animate-slideIn {
     animation: slideIn 2s ease-in-out forwards;
   }
+  .backgroun-image{
+    margin-bottom: 200px;
+  }
+  @media (max-width: 1024px) {
+    .background-image {
+      background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+      background-position: center;
+      background-repeat: no-repeat; 
+      background-size: cover; /* Ensures the image covers the entire screen without distortion */
+    background-position: center; /* Centers the image */
+    }
+}
+
+/* Small screens (large phones, small tablets) */
+@media (max-width: 768px) {
+  .background-image {
+    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; /* Ensures the image covers the entire screen without distortion */
+  background-position: center; /* Centers the image */
+  }
+}
+
+/* Extra-small screens (phones) */
+@media (max-width: 480px) {
+  .background-image {
+    background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   
+
+}
+}

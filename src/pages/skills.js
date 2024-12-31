@@ -88,7 +88,7 @@ function Skills() {
   ];
 
   return (
-    <div className="background-images">
+    <div >
       <header>
      
         {!selectedComponent && (

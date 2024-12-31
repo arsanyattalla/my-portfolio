@@ -17,7 +17,7 @@ function AboutMe() {
   };
 
   return (
-    <div className="background-image">
+    <div className="backgroun-image">
       
       
 

@@ -89,7 +89,6 @@
 }
 
 .title-text {
-  font-family: cursive; /* Default system cursive font */
   font-weight: 400; /* A balanced weight for elegance */
   font-style: italic; /* Emphasizes cursive appearance */
   font-size: 35px; /* Adjust size as desired */
@@ -132,6 +131,8 @@
 
   .title-text {
     font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+
   }
 
   .title {

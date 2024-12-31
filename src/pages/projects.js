@@ -63,7 +63,7 @@ function Projects() {
   ];
 
   return (
-    <div className="background-image">
+    <div className="backgroun-image">
       <header>
      
       <div className={`titl ${animate ? "animate-slideIn" : ""}`}>

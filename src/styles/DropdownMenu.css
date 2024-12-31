@@ -25,7 +25,10 @@
   .p-2 {
 margin: 5px ;
 padding:15px ;
-max-width: 45vh;
+max-width: 51vh;
+font-family: 'Courier New', Courier, monospace;
+width: 100%;
+
   }
 }
 .p-2:hover,

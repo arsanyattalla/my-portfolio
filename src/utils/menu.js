@@ -19,8 +19,6 @@ export function Menu() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const canvasRef = useRef(null);
-  const [selectedComponent, setSelectedComponent] = useState(null);
-  const [currentSection, setCurrentSection] = useState("About Me");
   const [ showMenu, setShowMenu ] = useState(false);
 
   useEffect(() => {
@@ -99,7 +97,7 @@ export function Menu() {
 
 
   return (
-    <div className="background-image">
+    <div>
       <canvas
         ref={canvasRef}
         className="shooting-star-canvas"

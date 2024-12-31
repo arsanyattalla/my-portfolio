@@ -17,7 +17,7 @@ function Experience() {
   };
 
   return (
-    <div className="background-image">
+    <div className="backgroun-image">
       <header>
        
         {!selectedComponent && (

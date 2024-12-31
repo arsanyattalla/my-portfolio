@@ -85,20 +85,26 @@ export function Menu() {
  
 
   const scrollToSection = (ref) => {
-    if(ref===homeRef){
-      setShowMenu(false)
-      window.scrollTo(0, 0,{ behavior: "smooth" });
+    if(ref.current === homeRef.current) {
+    setShowMenu(false)
+    ref.current.scrollIntoView({ behavior: "smooth" });
     }else{
       setShowMenu(true)
-    ref.current.scrollIntoView({ behavior: "smooth" });
+      ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
 
 
   return (
-    <div >
-      <canvas
+    <div ref={homeRef} >
+      
+<button
+  className="p-4"
+  onClick={() => scrollToSection(homeRef)}
+>
+  Home
+</button>    <canvas
         ref={canvasRef}
         className="shooting-star-canvas"
         style={{
@@ -140,6 +146,7 @@ export function Menu() {
           </Stack>
         </header>
       </div>
+    
       <div ref={aboutMeRef} data-section="About Me">
       
         <AboutMe />

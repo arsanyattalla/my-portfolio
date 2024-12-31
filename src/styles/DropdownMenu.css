@@ -20,6 +20,25 @@
   letter-spacing: 1.5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.p-4 {
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 16px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background-color: #121f38;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 10px;
+  z-index: 9999; /* Ensures it's on top of other content */
+}
 
 @media (max-width: 767px) {
   .p-2 {

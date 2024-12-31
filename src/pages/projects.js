@@ -66,7 +66,7 @@ function Projects() {
     <div className="backgroun-image">
       <header>
      
-      <div className={`titl ${animate ? "animate-slideIn" : ""}`}>
+      <div className={`title ${animate ? "animate-slideIn" : ""}`}>
         
           {!selectedComponent && (
           <>

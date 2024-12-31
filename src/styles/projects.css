@@ -104,6 +104,7 @@
   
   .backgroun-image{
     margin-bottom: 200px;
+
   }
   .background-image {
 background-attachment: fixed;  
@@ -114,7 +115,14 @@ background-attachment: fixed;
     background-position: center;
 }
 
-
+@media (max-width: 768px) {
+  .background-image {
+    
+      overflow: hidden; /* Avoid shaky behavior on mobile */
+      background-color: #021c3f;
+      background: #000813;
+  }
+}
   
   @media (max-width: 767px) {
     .App-header {

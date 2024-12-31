@@ -11,15 +11,26 @@
     overflow: hidden;
   }
   
-  /* Header Styling */
+  
   .header {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
     text-align: center;
     color: #cfd8dc;
     font-weight: bold;
     margin-bottom: 30px;
-  }
-  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px; 
+    border: 5px solid #90a4ae; 
+    border-radius: 50px; 
+    background-color: rgba(144, 164, 174, 0.2); 
+    display: inline-block; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+.header:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); 
+  background-color: rgba(144, 164, 174, 0.4); 
+}
   /* Shooting Stars Aesthetic */
   .shooting-stars {
     position: absolute;

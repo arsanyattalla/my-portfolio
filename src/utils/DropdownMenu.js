@@ -6,46 +6,31 @@ import Skills from "../pages/skills";
 import AboutMe from "../pages/aboutMe";
 import Experience from "../pages/experience";
 
-const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
+const DropdownMenu = ({ placeholder, options }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const dropdownRef = useRef(null);
-
-  const options = [
-    {
-      label: "Home",
-      onClick: () => {
-        window.location.href = "/";
-      },
-    },
-    { label: "About Me", component: <AboutMe /> },
-    { label: "Experience", component: <Experience /> },
-    { label: "Skills", component: <Skills /> },
-    { label: "Projects", component: <Projects /> },
-  ];
+ const aboutMeRef = useRef(null);
+  const homeRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+  
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   const handleOptionClick = (option) => {
-    if (placeholder === option.label) {
-      setIsOpen(false)
-      return;
+   
 
-    }
-
-    if (option.onClick) {
-      option.onClick(); // Navigate or perform custom logic
-    } else {
-      setSelectedOption(option); // Update the selected option
-    }
+    if (option.action) {
+      option.action() 
+    } 
 
     setIsOpen(false);
 
-    if (onOptionSelected) {
-      onOptionSelected(option.component || null); // Notify parent component
-    }
+    
   };
 
   const handleClickOutside = (event) => {
@@ -64,10 +49,10 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
   return (
     <div>
       {!selectedOption?.component ? (
-        <div className={`dropdown ${className}`} ref={dropdownRef}>
+        <div className={`dropdown`} ref={dropdownRef}>
           <button className="p-3" onClick={handleToggle}>
             {selectedOption ? selectedOption.label : placeholder}
-            <span className="dropdown-arrow">{isOpen ? "▲" : "▼"}</span>
+            <div className="dropdown-arrow"></div>
           </button>
           {isOpen && (
             <ul className={`dropdown-menu ${isOpen ? "open" : ""}`}>
@@ -84,9 +69,7 @@ const DropdownMenu = ({ placeholder, className, onOptionSelected }) => {
           )}
         </div>
       ) : (
-        <div>
-          {selectedOption?.label && <div>{selectedOption.component}</div>}
-        </div>
+        <></>
       )}
     </div>
   );

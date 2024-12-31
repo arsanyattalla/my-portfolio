@@ -173,6 +173,8 @@ margin-bottom: 25px;
 }
 .menu-slide {
   transition: transform 2s ease-in-out;
+  
+
 }
 
 .slide-right {

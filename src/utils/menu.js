@@ -7,8 +7,8 @@ import AboutMe from "../pages/aboutMe";
 import Experience from "../pages/experience";
 import Projects from "../pages/projects.js";
 import Skills from "../pages/skills.js";
-import profileImg from "../images/linkedin1.png";
 import DropdownMenu from "../utils/DropdownMenu";
+import { FaListUl } from "react-icons/fa";
 
 export function Menu() {
   const [slide, setSlide] = useState(false);
@@ -19,7 +19,32 @@ export function Menu() {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const canvasRef = useRef(null);
-  const [ showMenu, setShowMenu ] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const dropdownOptions = [
+    { label: "Home", action: () => scrollToSection(homeRef) },
+    { label: "About Me", action: () => scrollToSection(aboutMeRef) },
+    { label: "Experience", action: () => scrollToSection(experienceRef) },
+    { label: "Projects", action: () => scrollToSection(projectsRef) },
+    { label: "Skills", action: () => scrollToSection(skillsRef) },
+  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      const isAtTop = window.pageYOffset <= 500;
+      console.log("Scroll detected. Is at top:", isAtTop);
+
+      if (isAtTop) {
+        setShowMenu(false);
+      } else {
+        setShowMenu(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     setAnimate(true);
@@ -34,10 +59,10 @@ export function Menu() {
     function createShootingStar() {
       if (Math.random() < 0.01) {
         const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height / 2;
+        const y = (Math.random() * canvas.height) / 2;
         const length = Math.random() * 100 + 50;
         const speed = Math.random() * 1.5 + 1;
-        const angle = Math.random() * Math.PI / 4;
+        const angle = (Math.random() * Math.PI) / 4;
         shootingStars.push({ x, y, length, speed, angle });
       }
     }
@@ -74,37 +99,30 @@ export function Menu() {
     }
 
     animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
   }, []);
 
-
- 
-
   const scrollToSection = (ref) => {
-    if(ref.current === homeRef.current) {
-    setShowMenu(false)
-    ref.current.scrollIntoView({ behavior: "smooth" });
-    }else{
-      setShowMenu(true)
+    if (ref.current === homeRef.current) {
+      setShowMenu(false);
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setShowMenu(true);
       ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-
-
   return (
-    <div ref={homeRef} >
-      
-<button
-  className="p-4"
-  onClick={() => scrollToSection(homeRef)}
->
-  Home
-</button>    <canvas
+    <div ref={homeRef}>
+      {showMenu && (
+        <>
+ <DropdownMenu
+        placeholder={<FaListUl />}
+        options={dropdownOptions}
+      />        </>
+      )}
+
+      <div></div>
+      <canvas
         ref={canvasRef}
         className="shooting-star-canvas"
         style={{
@@ -116,9 +134,7 @@ export function Menu() {
           height: "100%",
         }}
       ></canvas>
-      <div className="menu">
-     
-      </div>
+      <div className="menu"></div>
       <div className={`menu-slide ${slide ? "slide-right" : "slide-reset"}`}>
         <header className={animate ? "animat" : ""}>
           <div className="title">
@@ -130,14 +146,20 @@ export function Menu() {
             <h1 className="title-text">Welcome to Arsany's Portfolio</h1>
             <p>Software Engineer</p>
           </div>
-          <Stack  direction="horizontal" gap={3}>
+          <Stack direction="horizontal" gap={3}>
             <button className="p-2" onClick={() => scrollToSection(aboutMeRef)}>
               About me
             </button>
-            <button className="p-2" onClick={() => scrollToSection(experienceRef)}>
+            <button
+              className="p-2"
+              onClick={() => scrollToSection(experienceRef)}
+            >
               Experience
             </button>
-            <button className="p-2" onClick={() => scrollToSection(projectsRef)}>
+            <button
+              className="p-2"
+              onClick={() => scrollToSection(projectsRef)}
+            >
               Projects
             </button>
             <button className="p-2" onClick={() => scrollToSection(skillsRef)}>
@@ -146,9 +168,8 @@ export function Menu() {
           </Stack>
         </header>
       </div>
-    
+
       <div ref={aboutMeRef} data-section="About Me">
-      
         <AboutMe />
       </div>
       <div ref={experienceRef} data-section="Experience">

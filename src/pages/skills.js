@@ -31,16 +31,16 @@ function Skills() {
     {
       skill: "Java",
       image:
-        "https://banner2.cleanpng.com/20180404/lxe/kisspng-java-class-file-java-platform-standard-edition-ja-coffee-jar-5ac598fd88a730.3981502415228991975597.jpg",
+        "https://e7.pngegg.com/pngimages/405/878/png-clipart-java-logo-java-runtime-environment-computer-icons-java-platform-standard-edition-java-miscellaneous-text-thumbnail.png",
     },
     {
       skill: "HTML",
       image:
-        "https://banner2.cleanpng.com/20190125/wpj/kisspng-computer-icons-html5-scalable-vector-graphics-port-socialpack-chocolate-icon-1713904721396.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmArE5CqNcP0VLcoElm9sTeWgl3XEB0gNIzxSmiSLd_lnoMbSTOyH4DHXPDIUqVxHn2Vs&usqp=CAU",
     },
     {
       skill: "SQL",
-      image: "https://banner2.cleanpng.com/20180330/zle/avid709mg.webp",
+      image: "https://e7.pngegg.com/pngimages/167/148/png-clipart-microsoft-azure-sql-database-microsoft-sql-server-database-blue-text-thumbnail.png",
     },
   ];
 

@@ -9,8 +9,7 @@
   html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 200vh; /* Example: Make the content tall enough */
 }
   
   .project-block {

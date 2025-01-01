@@ -70,9 +70,9 @@ function Projects() {
         
           {!selectedComponent && (
           <>
-          <p className="header">Projects</p>
+          <h1 className="about-me-header">Projects</h1>
           <div className="profile-pic-container">
-                <img className="profile-pic" src='https://www.springboard.com/blog/wp-content/uploads/2022/03/what-is-a-coding-project.png' alt="Profile" />
+                <img className="profile-image" src='https://www.springboard.com/blog/wp-content/uploads/2022/03/what-is-a-coding-project.png' alt="Profile" />
               </div>
           <div className="projects-container">
             {projects.map((project, index) => {

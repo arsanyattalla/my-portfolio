@@ -6,56 +6,48 @@ import DropdownMenu from "../utils/DropdownMenu";
 
 function Experience() {
   const [animate, setAnimate] = useState(false);
-  const [selectedComponent, setSelectedComponent] = useState(null);
 
   useEffect(() => {
     setAnimate(true);
   }, []);
 
-  const handleMenuSelection = (component) => {
-    setSelectedComponent(component);
-  };
-
   return (
-    <div className="backgroun-image">
-      <header>
-       
-        {!selectedComponent && (
-          <>
-            <div
-              className={`about-container ${animate ? "animate-slideIn" : ""}`}
-            >
-              <p className="header">Experience</p>
-              <div className="profile-pic-container">
-                <img className="profile-pic" src={profileImg} alt="Profile" />
-              </div>
-              <div className="timeline">
-              <div className="timeline-item">
-                  <span className="timeline-date">09/2024 – Present</span>
-                  <strong>Software Engineer For AI Data Training</strong>
-                  <br />
-                  Outlier (contract)
-                </div>
-                <div className="timeline-item">
-                  <span className="timeline-date">10/2021 – 05/2024</span>
-                  <strong>Software Engineer</strong>
-                  <br />
-                  Qureez, Inc. (Full-Time)
-                </div>
+    <div className="about-me-container">
+    <div className={`about-me-content ${animate ? "animate-fadeIn" : ""}`}>
+      {/* Left Section: Profile Image */}
+      <div className="about-me-image-container">
+        <img
+          className="about-me-image"
+          src={profileImg}
+          alt="Arsany Attalla"
+        />
+      </div>
 
-                
-
-                <div className="timeline-item">
-                  <span className="timeline-date">05/2021 – 08/2021</span>
-                  <strong>UI Developer Intern</strong>
-                  <br />
-                  Ratica (Internship)
-                </div>
-              </div>
+        {/* Right Section: Text */}
+        <div className="experience-text-container">
+          <h1 className="about-me-header">Experience</h1>
+          <div className="timeline">
+            <div className="timeline-item">
+              <span className="timeline-date">09/2024 – Present</span>
+              <strong>Software Engineer For AI Data Training</strong>
+              <br />
+              Outlier (contract)
             </div>
-          </>
-        )}
-      </header>
+            <div className="timeline-item">
+              <span className="timeline-date">10/2021 – 05/2024</span>
+              <strong>Software Engineer</strong>
+              <br />
+              Qureez, Inc. (Full-Time)
+            </div>
+            <div className="timeline-item">
+              <span className="timeline-date">05/2021 – 08/2021</span>
+              <strong>UI Developer Intern</strong>
+              <br />
+              Ratica (Internship)
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

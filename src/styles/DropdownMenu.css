@@ -43,9 +43,11 @@
   .p-2 {
 margin: 5px ;
 padding:15px ;
-max-width: 51vh;
 font-family: 'Courier New', Courier, monospace;
-width: 100%;
+width: 50vh;
+display: flex;
+align-items: center;
+justify-content: center;
 
   }
 }

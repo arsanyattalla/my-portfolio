@@ -89,13 +89,13 @@
 }
 
 .title-text {
-  font-weight: 400; /* A balanced weight for elegance */
-  font-style: italic; /* Emphasizes cursive appearance */
-  font-size: 35px; /* Adjust size as desired */
-  letter-spacing: -1.5px; /* Slight spacing for sophistication */
+  font-style: bold; 
+  font-size: 35px; 
+  letter-spacing: -1.5px; 
   line-height: 1.2; 
   color: #797676;  
   margin-bottom: -18px;
+  font-family: 'Courier New', Courier, monospace;
 }
 .texts {
   font-family: "Arial Black", sans-serif;
@@ -169,7 +169,6 @@
 }
 
 .animat {
-  animation: slideIn 2s ease-in-out forwards;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -177,4 +176,20 @@
   justify-content: center;
   color: rgb(240, 240, 240);
   font-size: 20px;
+  white-space: nowrap; 
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i)); 
+}
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

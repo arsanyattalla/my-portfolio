@@ -6,21 +6,18 @@
   }
   .p-2,
 .p-3 {
-  font-family: cursive; /* System default cursive font */
-  font-weight: 300; /* Thin weight */
-  font-style: italic; /* Adds a cursive, slanted look */
-  font-size: 35px; 
+  padding: 10px;
+  font-family:'Courier New', Courier, monospace; /* System default cursive font */
   margin: 10px;
-  border: none;
+  border:#031530;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   background-color: #121f38;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  text-transform: uppercase;
   letter-spacing: 1.5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 .p-4 {
   font-family:'Courier New', Courier, monospace;

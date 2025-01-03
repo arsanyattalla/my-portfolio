@@ -9,7 +9,7 @@
   html, body {
     margin: 0;
     padding: 0;
-    height: 200vh; /* Example: Make the content tall enough */
+    height: 200vh; 
 }
   
   .project-block {
@@ -110,14 +110,14 @@ background-attachment: fixed;
  
     background-image: url("../images/pexels-frank-cone-140140-3214110.jpg");
     background-repeat: no-repeat;
-    background-size: cover; /* Covers the screen without distortion */
+    background-size: cover; 
     background-position: center;
 }
 
 @media (max-width: 768px) {
   .background-image {
     
-      overflow: hidden; /* Avoid shaky behavior on mobile */
+      overflow: hidden; 
       background-color: #021c3f;
       background: #000813;
   }
@@ -226,5 +226,17 @@ background-attachment: fixed;
   .animate-slideIn {
     animation: slideIn 2s ease-in-out forwards;
   }
+
+
+.animate-slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.animate-slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
   
  

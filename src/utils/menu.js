@@ -48,14 +48,14 @@ export function Menu() {
     });
 
     return () => {
-      
+      sections.forEach((sectionRef) => {
+        if (sectionRef.current) observer.unobserve(sectionRef.current);
+      });
     };
   }, [sections]);
   useEffect(() => {
     const handleScroll = () => {
       const isAtTop = window.pageYOffset <= 500;
-      console.log("Scroll detected. Is at top:", isAtTop);
-
       if (isAtTop) {
         setShowMenu(false);
       } else {

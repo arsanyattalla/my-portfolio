@@ -89,8 +89,13 @@ function Skills() {
             <li>Jenkins</li>
             <li>Agile Methodologies</li>
             <li>CI/CD Pipelines</li>
-            <li>Microservices Architecture</li>
-            <li>Test-Driven Development (TDD)</li>
+            <li>System Administration</li>
+            <li>Networking</li>
+            <li>Linux</li>
+            <li>Shell Scripting</li>
+            <li>Technical Troubleshooting</li>
+            <li>Web Development</li>
+
           </ul>
         </div>
       </div>

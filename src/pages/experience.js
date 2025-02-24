@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 import "../styles/menu.css";
 import profileImg from "../images/5906160.png";
-import DropdownMenu from "../utils/DropdownMenu";
 
 function Experience() {
   const [animate, setAnimate] = useState(false);
@@ -35,7 +34,7 @@ function Experience() {
             </div>
             <div className="timeline-item">
               <span className="timeline-date">10/2021 – 05/2024</span>
-              <strong>Software Engineer</strong>
+              <strong>IT Support Engineer/Software Engineer</strong>
               <br />
               Qureez, Inc. (Full-Time)
             </div>

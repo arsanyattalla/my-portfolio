@@ -100,7 +100,7 @@ export function Menu() {
               alt="Rotating Earth"
             />
             <h1 className="title-text">Welcome to Arsany's Portfolio</h1>
-            <p>Software Engineer</p>
+            <p>Software Engineer / Information Systems Engineer</p>
           </div>
           <Stack direction="horizontal" gap={3}>
             <button className="p-2" onClick={() => scrollToSection(aboutMeRef)}>

@@ -85,7 +85,7 @@ const timeline = [
 const skills = [
   ["Network Architecture", "Cisco • SD-WAN • LAN/WAN • VLANs", Network],
   ["Security", "Palo Alto • Firewalls • VPN • Segmentation", ShieldCheck],
-  ["Wireless", "Ruckus • Ubiquiti • Enterprise Wi-Fi", Wifi],
+  ["Wireless", "Ruckus • Ubiquiti • Meraki", Wifi],
   ["Automation", "Python • PowerShell • Netmiko", Braces],
   ["Cloud & Systems", "Azure • Hyper-V • Windows Server", Cloud],
   ["Operations", "Monitoring • SOPs • Vendors • MSPs", Layers3],
@@ -227,7 +227,7 @@ function App() {
             </div>
 
             <div className="boot-title">
-              ARSANY<span>.NET</span>
+              ARSANY
             </div>
 
             <div className="boot-status">
@@ -278,7 +278,7 @@ function App() {
           </span>
 
           ARSANY
-          <span className="dim">.NET</span>
+          
         </button>
 
         <nav className={menu ? "open" : ""}>
@@ -311,25 +311,17 @@ function App() {
 
       <main>
 
-        <section id="home" className="hero section">
+        <section id="home" className="hero section" >
           <div>
-            <div className="eyebrow">
-              <span className="pulse" />
-              SYSTEM ONLINE
-              <span>/ AVAILABLE FOR CYBERSECURITY</span>
-            </div>
+            
 
-            <h1>Arsany Attalla</h1>
+            <h1 align='center'>Arsany Attalla</h1>
 
-            <p className="lead">
+            <p className="lead" align='center'>
               Network Administrator @ 1st United Credit Union
             </p>
 
-            <p className="hero-description">
-              I build and maintain secure, reliable infrastructure
-              across enterprise networks, systems and cloud environments.
-            </p>
-
+            
             <div className="actions">
               <button
                 className="primary"
@@ -359,8 +351,6 @@ function App() {
 
               <strong>
                 network-admin
-                <span className="arrow">→</span>
-                security-analyst
               </strong>
 
               <div>

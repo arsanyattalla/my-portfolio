@@ -222,7 +222,7 @@ function App() {
 
       setScrollProgress(progress);
 
-      const sections = ["home", "work", "experience", "education", "about"];
+      const sections = ["home", "work", "experience", "education", "skills"];
 
       let current = "home";
 
@@ -369,7 +369,7 @@ function App() {
         </button>
 
         <nav className={menu ? "open" : ""}>
-          {["home", "work", "experience", "education", "about"].map((x) => (
+          {["home", "projects", "experience", "education", "skills"].map((x) => (
             <button
               key={x}
               className={active === x ? "active" : ""}
@@ -404,7 +404,7 @@ function App() {
                 <ArrowDownRight size={17} />
               </button>
 
-              <button className="ghost" onClick={() => go("about")}>
+              <button className="ghost" onClick={() => go("skills")}>
                 Who is Arsany?
               </button>
             </div>
@@ -472,22 +472,9 @@ function App() {
           </div>
         </section>
 
-        <div className="ticker">
-          NETWORK ARCHITECTURE
-          <span>✦</span>
-          SECURITY
-          <span>✦</span>
-          SD-WAN
-          <span>✦</span>
-          AUTOMATION
-          <span>✦</span>
-          INFRASTRUCTURE
-          <span>✦</span>
-          NETWORK ARCHITECTURE
-        </div>
-
-        <section id="work" className="section">
-          <Heading k="SELECTED WORK" t="Things I've been building." />
+        
+        <section id="projects" className="section">
+          <Heading t="Projects" />
 
           <div className="search reveal">
             <Search size={16} />
@@ -551,7 +538,7 @@ function App() {
         </section>
 
         <section id="experience" className="section exp">
-          <Heading k="TRANSMISSION LOG" t="Where I've been." />
+          <Heading  t="Experience" />
 
           <div className="timeline">
             {timeline.map((x, i) => (
@@ -604,48 +591,35 @@ function App() {
           </div>
         </section>
 
-        <section id="about" className="section about">
-          <div className="aboutcard reveal">
-            <div>
-              <div className="eyebrow">01 / PHILOSOPHY</div>
+       <section id="skills" className="section about">
+  <div className="about-content">
+    <div className="eyebrow">TOOLBOX</div>
 
-              <h2>Infrastructure is a product.</h2>
+    <h2 className="about-title">
+      What I <span>work with.</span>
+    </h2>
 
-              <p>
-                The best network is not the one with the most features. It's the
-                one that is predictable, observable, secure and easy for the
-                next engineer to understand.
-              </p>
+
+    <div className="skills">
+      {skills.map((s) => {
+        const Icon = s[2];
+
+        return (
+          <div key={s[0]} className="skill-card reveal">
+            <div className="skill-icon">
+              <Icon size={28} strokeWidth={1.8} />
             </div>
 
-            <div className="stats">
-              <Stat I={Cpu} a="NETWORK" b="Primary focus" />
-
-              <Stat I={Braces} a="PYTHON" b="Automation" />
-            </div>
-          </div>
-
-          <div>
-            <div className="eyebrow">02 / TOOLBOX</div>
-
-            <div className="skills">
-              {skills.map((s) => {
-                const Icon = s[2];
-
-                return (
-                  <div key={s[0]} className="reveal">
-                    <Icon size={19} />
-
-                    <span>
-                      <strong>{s[0]}</strong>
-                      <small>{s[1]}</small>
-                    </span>
-                  </div>
-                );
-              })}
+            <div className="skill-info">
+              <strong>{s[0]}</strong>
+              <small>{s[1]}</small>
             </div>
           </div>
-        </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
         <section className="cta section">
           <div className="ctagrid" />
@@ -690,10 +664,10 @@ function App() {
 
             {[
               ["Home", "home"],
-              ["Selected Work", "work"],
+              ["Projects", "projects"],
               ["Experience", "experience"],
               ["Education", "education"],
-              ["About", "about"],
+              ["Skills", "about"],
             ].map((x) => (
               <button
                 key={x[1]}

@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-
+import sfsuLogo from "../public/san-francisco-state-university-logo-png_seeklogo-348088.png";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -10,6 +10,7 @@ import {
   Cloud,
   Command,
   Cpu,
+  GraduationCap,
   Globe2,
   Layers3,
   LockKeyhole,
@@ -85,10 +86,19 @@ const timeline = [
 const skills = [
   ["Network Architecture", "Cisco • SD-WAN • LAN/WAN • VLANs", Network],
   ["Security", "Palo Alto • Firewalls • VPN • Segmentation", ShieldCheck],
-  ["Wireless", "Ruckus • Ubiquiti • Meraki", Wifi],
+  ["Wireless", "Ruckus • Ubiquiti • Enterprise Wi-Fi", Wifi],
   ["Automation", "Python • PowerShell • Netmiko", Braces],
   ["Cloud & Systems", "Azure • Hyper-V • Windows Server", Cloud],
   ["Operations", "Monitoring • SOPs • Vendors • MSPs", Layers3],
+];
+
+const education = [
+  [
+    "Degree",
+    "San Francisco State University",
+    "B.S. Computer Science",
+    "Software development, systems, networking and computer science fundamentals.",
+  ],
 ];
 
 function App() {
@@ -104,12 +114,14 @@ function App() {
   const [bootProgress, setBootProgress] = useState(0);
   const [bootText, setBootText] = useState("INITIALIZING NETWORK");
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [mouse, setMouse] = useState({ x: 50, y: 50 });
+
+  const [shellOpen, setShellOpen] = useState(false);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        e.key.toLowerCase() === "k"
-      ) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setCmd(true);
       }
@@ -138,52 +150,124 @@ function App() {
   }, []);
 
   useEffect(() => {
-  const messages = [
-    "INITIALIZING NETWORK",
-    "LOADING SECURITY MODULES",
-    "CONNECTING INFRASTRUCTURE",
-    "VERIFYING SYSTEMS",
-    "SCANNING NETWORK NODES",
-    "ESTABLISHING SECURE SESSION",
-    "SYSTEM ONLINE",
-  ];
+    const messages = [
+      "INITIALIZING NETWORK",
+      "LOADING SECURITY MODULES",
+      "CONNECTING INFRASTRUCTURE",
+      "VERIFYING SYSTEMS",
+      "SCANNING NETWORK NODES",
+      "ESTABLISHING SECURE SESSION",
+      "SYSTEM ONLINE",
+    ];
 
-  let progress = 0;
-  let messageIndex = 0;
+    let progress = 0;
+    let messageIndex = 0;
 
-  const interval = setInterval(() => {
-    // Much slower progress
-    progress += Math.floor(Math.random() * 3) + 1;
+    const interval = setInterval(() => {
+      progress += Math.floor(Math.random() * 3) + 1;
 
-    if (progress > 100) {
-      progress = 100;
-    }
+      if (progress > 100) {
+        progress = 100;
+      }
 
-    setBootProgress(progress);
+      setBootProgress(progress);
 
-    // Change status messages gradually
-    const newIndex = Math.min(
-      Math.floor(progress / 15),
-      messages.length - 1
+      const newIndex = Math.min(Math.floor(progress / 15), messages.length - 1);
+
+      if (newIndex !== messageIndex) {
+        messageIndex = newIndex;
+        setBootText(messages[newIndex]);
+      }
+
+      if (progress >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+          setBooting(false);
+        }, 1200);
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      },
     );
 
-    if (newIndex !== messageIndex) {
-      messageIndex = newIndex;
-      setBootText(messages[newIndex]);
-    }
+    revealItems.forEach((item) => observer.observe(item));
 
-    if (progress >= 100) {
-      clearInterval(interval);
+    return () => observer.disconnect();
+  }, [booting]);
 
-      // Stay on SYSTEM ONLINE for a moment
-      setTimeout(() => {
-        setBooting(false);
-      }, 1200);
-    }
-  }, 150);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
 
-  return () => clearInterval(interval);
-}, []);
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+
+      setScrollProgress(progress);
+
+      const sections = ["home", "work", "experience", "education", "about"];
+
+      let current = "home";
+
+      sections.forEach((id) => {
+        const section = document.getElementById(id);
+
+        if (section) {
+          const rect = section.getBoundingClientRect();
+
+          if (rect.top <= window.innerHeight * 0.35) {
+            current = id;
+          }
+        }
+      });
+
+      setActive(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleMouse = (e) => {
+      setMouse({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100,
+      });
+
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+    };
+
+    window.addEventListener("mousemove", handleMouse);
+
+    return () => window.removeEventListener("mousemove", handleMouse);
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase().trim();
@@ -191,7 +275,7 @@ function App() {
     if (!q) return projects;
 
     return projects.filter((project) =>
-      project.join(" ").toLowerCase().includes(q)
+      project.join(" ").toLowerCase().includes(q),
     );
   }, [query]);
 
@@ -206,7 +290,6 @@ function App() {
 
   return (
     <div className="app">
-
       {booting && (
         <div
           className={`boot-screen ${
@@ -226,9 +309,7 @@ function App() {
               </div>
             </div>
 
-            <div className="boot-title">
-              ARSANY
-            </div>
+            <div className="boot-title">ARSANY ATTALLA</div>
 
             <div className="boot-status">
               <span className="boot-dot" />
@@ -245,13 +326,9 @@ function App() {
             </div>
 
             <div className="boot-footer">
-              <span>
-                NETWORK / SECURITY / AUTOMATION
-              </span>
+              <span>NETWORK / SECURITY / AUTOMATION</span>
 
-              <span>
-                {String(bootProgress).padStart(3, "0")}%
-              </span>
+              <span>{String(bootProgress).padStart(3, "0")}%</span>
             </div>
           </div>
 
@@ -265,24 +342,34 @@ function App() {
         </div>
       )}
 
+      <div
+        className="scroll-progress"
+        style={{
+          width: `${scrollProgress}%`,
+        }}
+      />
+
+      <div
+        className="mouse-glow"
+        style={{
+          left: `${mouse.x}%`,
+          top: `${mouse.y}%`,
+        }}
+      />
+
       <div className="noise" />
       <div className="grid" />
 
       <header>
-        <button
-          className="brand"
-          onClick={() => go("home")}
-        >
+        <button className="brand" onClick={() => go("home")}>
           <span>
             <Radio size={17} />
           </span>
-
           ARSANY
-          
         </button>
 
         <nav className={menu ? "open" : ""}>
-          {["home", "work", "experience", "about"].map((x) => (
+          {["home", "work", "experience", "education", "about"].map((x) => (
             <button
               key={x}
               className={active === x ? "active" : ""}
@@ -292,49 +379,32 @@ function App() {
             </button>
           ))}
 
-          <button
-            className="kbd"
-            onClick={() => setCmd(true)}
-          >
-            <Command size={13} />
-            K
+          <button className="kbd" onClick={() => setCmd(true)}>
+            <Command size={13} />K
           </button>
         </nav>
 
-        <button
-          className="mobile"
-          onClick={() => setMenu(!menu)}
-        >
+        <button className="mobile" onClick={() => setMenu(!menu)}>
           {menu ? <X /> : <Menu />}
         </button>
       </header>
 
       <main>
+        <section id="home" className="hero section">
+          <div className="hero-copy reveal">
+            <h1 align="center">Arsany Attalla</h1>
 
-        <section id="home" className="hero section" >
-          <div>
-            
-
-            <h1 align='center'>Arsany Attalla</h1>
-
-            <p className="lead" align='center'>
+            <p className="lead" align="center">
               Network Administrator @ 1st United Credit Union
             </p>
 
-            
             <div className="actions">
-              <button
-                className="primary"
-                onClick={() => go("work")}
-              >
+              <button className="primary" onClick={() => go("work")}>
                 Explore my work
                 <ArrowDownRight size={17} />
               </button>
 
-              <button
-                className="ghost"
-                onClick={() => go("about")}
-              >
+              <button className="ghost" onClick={() => go("about")}>
                 Who is Arsany?
               </button>
             </div>
@@ -349,9 +419,7 @@ function App() {
                 <b>arsany@network</b>:~$ whoami
               </div>
 
-              <strong>
-                network-admin
-              </strong>
+              <strong>network-admin</strong>
 
               <div>
                 <b>arsany@network</b>:~$ status
@@ -360,10 +428,19 @@ function App() {
               <strong>
                 <em>●</em> all systems nominal
               </strong>
+
+              <button
+                className="terminal-launch"
+                onClick={() => setShellOpen(true)}
+              >
+                <Terminal size={14} />
+                OPEN INTERACTIVE SHELL
+                <ArrowUpRight size={13} />
+              </button>
             </div>
           </div>
 
-          <div className="visual">
+          <div className="visual reveal">
             <div className="orbital">
               <div className="orbit a" />
               <div className="orbit b" />
@@ -387,10 +464,9 @@ function App() {
 
             <div className="metrics">
               <Metric l="UPTIME" v={`${live}%`} />
-              <Metric
-                l="PACKETS"
-                v={packets.toLocaleString()}
-              />
+
+              <Metric l="PACKETS" v={packets.toLocaleString()} />
+
               <Metric l="NODES" v="24" />
             </div>
           </div>
@@ -411,12 +487,9 @@ function App() {
         </div>
 
         <section id="work" className="section">
-          <Heading
-            k="SELECTED WORK"
-            t="Things I've been building."
-          />
+          <Heading k="SELECTED WORK" t="Things I've been building." />
 
-          <div className="search">
+          <div className="search reveal">
             <Search size={16} />
 
             <input
@@ -435,12 +508,21 @@ function App() {
               return (
                 <button
                   key={p[0]}
-                  className={`project ${p[5]}`}
+                  className={`project ${p[5]} reveal`}
                   onClick={() => setSelected(p)}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+
+                    const x = e.clientX - rect.left;
+
+                    const y = e.clientY - rect.top;
+
+                    e.currentTarget.style.setProperty("--card-x", `${x}px`);
+
+                    e.currentTarget.style.setProperty("--card-y", `${y}px`);
+                  }}
                 >
-                  <span className="num">
-                    0{i + 1}
-                  </span>
+                  <span className="num">0{i + 1}</span>
 
                   <div className="picon">
                     <Icon size={24} />
@@ -469,19 +551,14 @@ function App() {
         </section>
 
         <section id="experience" className="section exp">
-          <Heading
-            k="TRANSMISSION LOG"
-            t="Where I've been."
-          />
+          <Heading k="TRANSMISSION LOG" t="Where I've been." />
 
           <div className="timeline">
             {timeline.map((x, i) => (
-              <div className="item" key={x[2]}>
+              <div className="item reveal" key={x[2]}>
                 <div className="year">{x[0]}</div>
 
-                <div className="dot">
-                  {i === 0 ? <Zap size={12} /> : <i />}
-                </div>
+                <div className="dot">{i === 0 ? <Zap size={12} /> : <i />}</div>
 
                 <div>
                   <h3>{x[1]}</h3>
@@ -493,55 +570,70 @@ function App() {
           </div>
         </section>
 
+        <section id="education" className="section education">
+          <Heading k="EDUCATION" t="Where I learned the fundamentals." />
+
+          <div className="education-layout">
+            {education.map((x) => {
+              return (
+                <div className="education-card reveal" key={x[1]}>
+                  <div className="education-icon">
+                    <img src={sfsuLogo} alt={x[1]} />
+                  </div>
+
+                  <div className="education-degree">
+                    <span>{x[0]}</span>
+                    <h3>{x[1]}</h3>
+                    <p>{x[2]}</p>
+                  </div>
+
+                  <div className="education-description">
+                    <small>FIELD OF STUDY</small>
+
+                    <p>{x[3]}</p>
+                  </div>
+
+                  <div className="education-scan">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         <section id="about" className="section about">
-          <div className="aboutcard">
+          <div className="aboutcard reveal">
             <div>
-              <div className="eyebrow">
-                01 / PHILOSOPHY
-              </div>
+              <div className="eyebrow">01 / PHILOSOPHY</div>
 
               <h2>Infrastructure is a product.</h2>
 
               <p>
-                The best network is not the one with the most
-                features. It's the one that is predictable,
-                observable, secure and easy for the next engineer
-                to understand.
+                The best network is not the one with the most features. It's the
+                one that is predictable, observable, secure and easy for the
+                next engineer to understand.
               </p>
             </div>
 
             <div className="stats">
-              <Stat
-                I={Cpu}
-                a="NETWORK"
-                b="Primary focus"
-              />
+              <Stat I={Cpu} a="NETWORK" b="Primary focus" />
 
-              <Stat
-                I={ShieldCheck}
-                a="SECURITY"
-                b="Next chapter"
-              />
-
-              <Stat
-                I={Braces}
-                a="PYTHON"
-                b="Automation"
-              />
+              <Stat I={Braces} a="PYTHON" b="Automation" />
             </div>
           </div>
 
           <div>
-            <div className="eyebrow">
-              02 / TOOLBOX
-            </div>
+            <div className="eyebrow">02 / TOOLBOX</div>
 
             <div className="skills">
               {skills.map((s) => {
                 const Icon = s[2];
 
                 return (
-                  <div key={s[0]}>
+                  <div key={s[0]} className="reveal">
                     <Icon size={19} />
 
                     <span>
@@ -570,19 +662,15 @@ function App() {
           </h2>
 
           <p>
-            Open to conversations around network engineering,
-            infrastructure and cybersecurity.
+            Open to conversations around network engineering, infrastructure and
+            cybersecurity.
           </p>
 
-          <a
-            className="primary"
-            href="mailto:hello@example.com"
-          >
+          <a className="primary" href="mailto:hello@example.com">
             Start a conversation
             <ArrowUpRight size={16} />
           </a>
         </section>
-
       </main>
 
       <footer>
@@ -592,27 +680,19 @@ function App() {
       </footer>
 
       {cmd && (
-        <div
-          className="backdrop"
-          onClick={() => setCmd(false)}
-        >
-          <div
-            className="cmd"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="backdrop" onClick={() => setCmd(false)}>
+          <div className="cmd" onClick={(e) => e.stopPropagation()}>
             <div className="cmdsearch">
               <Search />
 
-              <input
-                autoFocus
-                placeholder="Jump to..."
-              />
+              <input autoFocus placeholder="Jump to..." />
             </div>
 
             {[
               ["Home", "home"],
               ["Selected Work", "work"],
               ["Experience", "experience"],
+              ["Education", "education"],
               ["About", "about"],
             ].map((x) => (
               <button
@@ -627,26 +707,28 @@ function App() {
               </button>
             ))}
 
-            <small>
-              ESC to close · CTRL K to open
-            </small>
+            <button
+              onClick={() => {
+                setCmd(false);
+                setShellOpen(true);
+              }}
+            >
+              Live Shell
+              <Terminal size={15} />
+            </button>
+
+            <small>ESC to close · CTRL K to open</small>
           </div>
         </div>
       )}
 
       {selected && (
-        <div
-          className="backdrop"
-          onClick={() => setSelected(null)}
-        >
+        <div className="backdrop" onClick={() => setSelected(null)}>
           <div
             className={`case ${selected[5]}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="close"
-              onClick={() => setSelected(null)}
-            >
+            <button className="close" onClick={() => setSelected(null)}>
               <X />
             </button>
 
@@ -684,13 +766,312 @@ function App() {
             </div>
 
             <aside>
-              CASE STUDY MODULE — add screenshots,
-              architecture diagrams, GitHub links and
-              implementation details here.
+              CASE STUDY MODULE — add screenshots, architecture diagrams, GitHub
+              links and implementation details here.
             </aside>
           </div>
         </div>
       )}
+
+      {shellOpen && <LiveShell onClose={() => setShellOpen(false)} go={go} />}
+    </div>
+  );
+}
+
+function LiveShell({ onClose, go }) {
+  const [input, setInput] = useState("");
+  const [history, setHistory] = useState([
+    {
+      type: "system",
+      text: "ARSANY.NET INTERACTIVE SHELL v1.0",
+    },
+    {
+      type: "system",
+      text: "Secure session established.",
+    },
+    {
+      type: "system",
+      text: 'Type "help" to view available commands.',
+    },
+  ]);
+
+  const [commandHistory, setCommandHistory] = useState([]);
+
+  const [historyIndex, setHistoryIndex] = useState(-1);
+
+  const inputRef = useRef(null);
+
+  const commands = {
+    help: [
+      "Available commands:",
+      "",
+      "  help         Show available commands",
+      "  whoami       Display operator information",
+      "  status       Show system status",
+      "  skills       List technical skills",
+      "  education    Display education",
+      "  projects     List selected projects",
+      "  experience   Display career timeline",
+      "  neofetch     Display system information",
+      "  clear        Clear terminal",
+      "  exit         Close shell",
+    ],
+
+    whoami: [
+      "arsany",
+      "",
+      "Role: Network Administrator",
+      "Focus: Network Engineering",
+      "",
+      "Location: SF / CA",
+    ],
+
+    status: [
+      "SYSTEM STATUS",
+      "────────────────────────",
+      "NETWORK       [ ONLINE ]",
+      "SECURITY      [ ONLINE ]",
+      "AUTOMATION    [ ONLINE ]",
+      "INFRASTRUCTURE[ ONLINE ]",
+      "",
+      "ALL SYSTEMS NOMINAL",
+    ],
+
+    skills: [
+      "TECHNICAL SKILLS",
+      "────────────────────────",
+      "Network Architecture",
+      "Cisco",
+      "SD-WAN",
+      "LAN / WAN / VLAN",
+      "Palo Alto",
+      "Firewalls",
+      "VPN",
+      "Ruckus",
+      "Ubiquiti",
+      "Python",
+      "PowerShell",
+      "Netmiko",
+      "Azure",
+      "Hyper-V",
+      "Windows Server",
+    ],
+
+    education: [
+      "EDUCATION",
+      "────────────────────────",
+      "B.S. San Francisco State University",
+      "",
+      "Field: Computer Science",
+    ],
+
+    projects: [
+      "SELECTED PROJECTS",
+      "────────────────────────",
+      "01  Network Command Center",
+      "02  Config Backup Automation",
+      "03  Security Lab",
+    ],
+
+    experience: [
+      "TRANSMISSION LOG",
+      "────────────────────────",
+      "NOW   Network Administrator",
+      "      1st United Credit Union",
+      "",
+      "2025  IT Systems Administrator / Engineer",
+      "      Draeger’s Supermarkets",
+      "",
+      "2025  End User Support Analyst",
+      "      Fidelity Investments",
+      "",
+      "2023  Customer Application Engineer",
+      "      Qureez / Zome",
+    ],
+
+    neofetch: [
+      "              ARSANY.NET",
+      "",
+      "OS        : Network Infrastructure",
+      "HOST      : Enterprise",
+      "KERNEL    : Security Focused",
+      "SHELL     : ArsanyShell",
+      "NETWORK   : Cisco / Palo Alto",
+      "SD-WAN    : VeloCloud",
+      "WIRELESS  : Ruckus / Ubiquiti",
+      "AUTOMATION: Python / Netmiko",
+      "STATUS    : ONLINE",
+    ],
+  };
+
+  const runCommand = (command) => {
+    const clean = command.trim().toLowerCase();
+
+    if (!clean) return;
+
+    setCommandHistory((prev) => [...prev.filter((x) => x !== clean), clean]);
+
+    setHistoryIndex(-1);
+
+    setHistory((prev) => [
+      ...prev,
+      {
+        type: "command",
+        text: `arsany@network:~$ ${command}`,
+      },
+    ]);
+
+    if (clean === "clear") {
+      setHistory([]);
+      return;
+    }
+
+    if (clean === "exit") {
+      onClose();
+      return;
+    }
+
+    if (clean === "work") {
+      onClose();
+      go("work");
+      return;
+    }
+
+    if (clean === "education") {
+      setHistory((prev) => [
+        ...prev,
+        ...commands.education.map((text) => ({
+          type: "output",
+          text,
+        })),
+      ]);
+      return;
+    }
+
+    if (commands[clean]) {
+      setHistory((prev) => [
+        ...prev,
+        ...commands[clean].map((text) => ({
+          type: "output",
+          text,
+        })),
+      ]);
+
+      return;
+    }
+
+    setHistory((prev) => [
+      ...prev,
+      {
+        type: "error",
+        text: `command not found: ${clean}`,
+      },
+      {
+        type: "output",
+        text: 'Type "help" for available commands.',
+      },
+    ]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    runCommand(input);
+    setInput("");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+
+      if (!commandHistory.length) return;
+
+      const nextIndex =
+        historyIndex === -1
+          ? commandHistory.length - 1
+          : Math.max(historyIndex - 1, 0);
+
+      setHistoryIndex(nextIndex);
+      setInput(commandHistory[nextIndex]);
+    }
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+
+      if (historyIndex === -1) return;
+
+      const nextIndex = historyIndex + 1;
+
+      if (nextIndex >= commandHistory.length) {
+        setHistoryIndex(-1);
+        setInput("");
+        return;
+      }
+
+      setHistoryIndex(nextIndex);
+      setInput(commandHistory[nextIndex]);
+    }
+  };
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  return (
+    <div className="shell-backdrop" onClick={onClose}>
+      <div className="live-shell" onClick={(e) => e.stopPropagation()}>
+        <div className="shell-header">
+          <div className="shell-title">
+            <span className="shell-status" />
+            ARSANY.NET / LIVE SHELL
+          </div>
+
+          <div className="shell-controls">
+            <span>●</span>
+            <span>●</span>
+            <button onClick={onClose}>
+              <X size={15} />
+            </button>
+          </div>
+        </div>
+
+        <div className="shell-body" onClick={() => inputRef.current?.focus()}>
+          {history.map((item, index) => (
+            <div
+              className={`shell-line ${item.type}`}
+              key={`${index}-${item.text}`}
+            >
+              {item.text || "\u00A0"}
+            </div>
+          ))}
+
+          <form className="shell-input-line" onSubmit={handleSubmit}>
+            <span>arsany@network:~$</span>
+
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              autoFocus
+              spellCheck="false"
+              autoComplete="off"
+            />
+
+            <span className="cursor" />
+          </form>
+        </div>
+
+        <div className="shell-footer">
+          <span>↑ ↓ HISTORY</span>
+
+          <span>
+            TYPE <b>HELP</b> FOR COMMANDS
+          </span>
+
+          <span>ESC TO CLOSE</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -724,7 +1105,7 @@ function Stat({ I, a, b }) {
 
 function Heading({ k, t }) {
   return (
-    <div className="heading">
+    <div className="heading reveal">
       <div className="eyebrow">{k}</div>
       <h2>{t}</h2>
     </div>

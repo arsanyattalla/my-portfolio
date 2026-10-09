@@ -86,7 +86,7 @@ const timeline = [
 const skills = [
   ["Network Architecture", "Cisco • SD-WAN • LAN/WAN • VLANs", Network],
   ["Security", "Palo Alto • Firewalls • VPN • Segmentation", ShieldCheck],
-  ["Wireless", "Ruckus • Ubiquiti • Enterprise Wi-Fi", Wifi],
+  ["Wireless", "Ruckus • Ubiquiti • Cisco Meraki", Wifi],
   ["Automation", "Python • PowerShell • Netmiko", Braces],
   ["Cloud & Systems", "Azure • Hyper-V • Windows Server", Cloud],
   ["Operations", "Monitoring • SOPs • Vendors • MSPs", Layers3],

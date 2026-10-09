@@ -404,9 +404,7 @@ function App() {
                 <ArrowDownRight size={17} />
               </button>
 
-              <button className="ghost" onClick={() => go("skills")}>
-                Who is Arsany?
-              </button>
+              
             </div>
 
             <div className="terminal">
@@ -593,7 +591,7 @@ function App() {
 
        <section id="skills" className="section about">
   <div className="about-content">
-    <div className="eyebrow">TOOLBOX</div>
+    <div className="eyebrow">SKILLS</div>
 
     <h2 className="about-title">
       What I <span>work with.</span>
@@ -630,9 +628,8 @@ function App() {
           </div>
 
           <h2>
-            Let's build something
+            Let's build something!
             <br />
-            <span>that stays up.</span>
           </h2>
 
           <p>
@@ -640,7 +637,7 @@ function App() {
             cybersecurity.
           </p>
 
-          <a className="primary" href="mailto:hello@example.com">
+          <a className="primary" href="mailto:arsanyattalla10@gmail.com">
             Start a conversation
             <ArrowUpRight size={16} />
           </a>

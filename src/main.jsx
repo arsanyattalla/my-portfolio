@@ -22,6 +22,7 @@ import {
   ShieldCheck,
   Sparkles,
   Terminal,
+  Github,
   Wifi,
   X,
   Zap,
@@ -39,12 +40,13 @@ const projects = [
     "cyan",
   ],
   [
-    "Config Backup Automation",
-    "AUTOMATION",
-    "Python workflow for collecting device configurations, organizing backups and preparing repeatable changes.",
-    ["Python", "Netmiko", "Git", "CI/CD"],
-    Terminal,
+    "NetPilot AI",
+    "AI / AUTOMATION",
+    "AI-powered network operations assistant built with Python and FastAPI. Features network diagnostics, performance history, anomaly detection, alert correlation, and AI-assisted root cause investigation.",
+    ["Python", "FastAPI", "Netmiko", "Ollama", "SQLite"],
+    Sparkles,
     "violet",
+    "https://github.com/arsanyattalla/NetPilot",
   ],
   [
     "Security Lab",
@@ -369,15 +371,17 @@ function App() {
         </button>
 
         <nav className={menu ? "open" : ""}>
-          {["home", "projects", "experience", "education", "skills"].map((x) => (
-            <button
-              key={x}
-              className={active === x ? "active" : ""}
-              onClick={() => go(x)}
-            >
-              {x}
-            </button>
-          ))}
+          {["home", "projects", "experience", "education", "skills"].map(
+            (x) => (
+              <button
+                key={x}
+                className={active === x ? "active" : ""}
+                onClick={() => go(x)}
+              >
+                {x}
+              </button>
+            ),
+          )}
 
           <button className="kbd" onClick={() => setCmd(true)}>
             <Command size={13} />K
@@ -403,8 +407,6 @@ function App() {
                 Explore my work
                 <ArrowDownRight size={17} />
               </button>
-
-              
             </div>
 
             <div className="terminal">
@@ -470,7 +472,6 @@ function App() {
           </div>
         </section>
 
-        
         <section id="projects" className="section">
           <Heading t="Projects" />
 
@@ -525,10 +526,26 @@ function App() {
                     ))}
                   </div>
 
-                  <label>
-                    OPEN CASE STUDY
-                    <ArrowUpRight size={15} />
-                  </label>
+                  <div className="project-actions">
+                    <label>
+                      OPEN CASE STUDY
+                      <ArrowUpRight size={15} />
+                    </label>
+
+                    {p[6] && (
+                      <a
+                        className="project-github"
+                        href={p[6]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        aria-label={`View ${p[0]} on GitHub`}
+                      >
+                        <Github size={16} />
+                        GitHub
+                      </a>
+                    )}
+                  </div>
                 </button>
               );
             })}
@@ -536,7 +553,7 @@ function App() {
         </section>
 
         <section id="experience" className="section exp">
-          <Heading  t="Experience" />
+          <Heading t="Experience" />
 
           <div className="timeline">
             {timeline.map((x, i) => (
@@ -589,35 +606,34 @@ function App() {
           </div>
         </section>
 
-       <section id="skills" className="section about">
-  <div className="about-content">
-    <div className="eyebrow">SKILLS</div>
+        <section id="skills" className="section about">
+          <div className="about-content">
+            <div className="eyebrow">SKILLS</div>
 
-    <h2 className="about-title">
-      What I <span>work with.</span>
-    </h2>
+            <h2 className="about-title">
+              What I <span>work with.</span>
+            </h2>
 
+            <div className="skills">
+              {skills.map((s) => {
+                const Icon = s[2];
 
-    <div className="skills">
-      {skills.map((s) => {
-        const Icon = s[2];
+                return (
+                  <div key={s[0]} className="skill-card reveal">
+                    <div className="skill-icon">
+                      <Icon size={28} strokeWidth={1.8} />
+                    </div>
 
-        return (
-          <div key={s[0]} className="skill-card reveal">
-            <div className="skill-icon">
-              <Icon size={28} strokeWidth={1.8} />
-            </div>
-
-            <div className="skill-info">
-              <strong>{s[0]}</strong>
-              <small>{s[1]}</small>
+                    <div className="skill-info">
+                      <strong>{s[0]}</strong>
+                      <small>{s[1]}</small>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </section>
 
         <section className="cta section">
           <div className="ctagrid" />
@@ -737,8 +753,33 @@ function App() {
             </div>
 
             <aside>
-              CASE STUDY MODULE — add screenshots, architecture diagrams, GitHub
-              links and implementation details here.
+              {selected[0] === "NetPilot AI" ? (
+                <>
+                  <strong>KEY CAPABILITIES</strong>
+                  <p>Network device diagnostics and interface analysis.</p>
+                  <p>
+                    Historical performance monitoring and anomaly detection.
+                  </p>
+                  <p>
+                    Alert correlation and AI-assisted root cause investigation.
+                  </p>
+                  <strong>ARCHITECTURE</strong>
+                  <p>Python + FastAPI + Netmiko + SQLite + Ollama</p>
+                  <strong>PROJECT GOAL</strong>
+                  <p>
+                    Reduce manual troubleshooting effort by bringing network
+                    telemetry, diagnostics, and AI-assisted analysis into one
+                    interface.
+                  </p>
+                  <strong>GITHUB</strong>
+                  <p>Add your public repository link here once it is ready.</p>
+                </>
+              ) : (
+                <>
+                  CASE STUDY MODULE — add screenshots, architecture diagrams,
+                  GitHub links and implementation details here.
+                </>
+              )}
             </aside>
           </div>
         </div>
@@ -840,10 +881,9 @@ function LiveShell({ onClose, go }) {
       "SELECTED PROJECTS",
       "────────────────────────",
       "01  Network Command Center",
-      "02  Config Backup Automation",
+      "02  NetPilot AI Network Operations Assistant",
       "03  Security Lab",
     ],
-
     experience: [
       "TRANSMISSION LOG",
       "────────────────────────",
